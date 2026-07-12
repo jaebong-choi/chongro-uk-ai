@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 공개(도메인 연결) 시 아래 robots 줄을 삭제하세요 — 시안 단계 검색 노출 방지용 -->
+    <meta name="robots" content="noindex, nofollow">
+    <title>종로유학원 영국 진학 AI 컨설팅 — 학부 · 석사</title>
+    <meta name="description" content="QS 2027 데이터 기반 영국 대학 진학 AI 진단 — 파운데이션·IYO 학부 경로부터 석사·프리마스터까지, 종로유학원.">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', '"Noto Sans KR"', 'sans-serif'],
+                    },
+                    colors: {
+                        'ink': '#000000',
+                        'ink2': '#1d1d1f',
+                        'paper': '#f5f5f7',
+                        'mute': '#86868b',
+                        'gold': '#FFDE59',
+                        'gold-deep': '#F2CB2E',
+                        'lime': '#C0FF72',
+                        'royal': '#004AAD',
+                    },
+                    letterSpacing: {
+                        'tighter2': '-0.028em',
+                        'tight2': '-0.022em',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #000000; color: #f5f5f7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .glass-nav { background: rgba(0,0,0,.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(255,255,255,.1); }
+        .pill-btn { border-radius: 980px; transition: all .3s ease; }
+        .section-dark { background-color:#000; color:#f5f5f7; }
+        .section-light { background-color:#f5f5f7; color:#1d1d1f; }
+        .fade-in-up { animation: fadeInUp .8s cubic-bezier(.16,1,.3,1) forwards; opacity:0; transform:translateY(20px); }
+        @keyframes fadeInUp { to { opacity:1; transform:translateY(0);} }
+        @media (prefers-reduced-motion: reduce) { .fade-in-up { animation:none; opacity:1; transform:none; } }
+        .chat-bubble-ai { background:#1d1d1f; border:1px solid #2d2d2f; border-radius:20px 20px 20px 6px; }
+        .chat-bubble-user { background:#FFDE59; color:#111; border-radius:20px 20px 6px 20px; }
+        .apple-card { background:#fff; border-radius:24px; border:1px solid #e5e5e7; transition:transform .3s ease, box-shadow .3s ease; }
+        .apple-card:hover { transform:translateY(-4px); box-shadow:0 20px 40px rgba(0,0,0,.08); }
+        .info-badge { display:inline-flex; align-items:center; background:#f5f5f7; border-radius:8px; padding:6px 10px; font-size:12px; font-weight:600; color:#3a3a3c; }
+        .route-badge { display:inline-flex; align-items:center; gap:6px; border-radius:8px; padding:6px 10px; font-size:12px; font-weight:700; }
+        .consult-banner { background:#FFDE59; color:#111; border-radius:14px; transition:all .25s ease; }
+        .consult-banner:hover { background:#F2CB2E; transform:translateY(-1px); }
+        .uni-link-banner { background:#fff; color:#1d1d1f; border:1px solid #d2d2d7; border-radius:14px; transition:all .25s ease; }
+        .uni-link-banner:hover { background:#f5f5f7; }
+        .filter-chip { border-radius:980px; border:1px solid #d2d2d7; padding:8px 16px; font-size:13px; font-weight:600; color:#3a3a3c; background:#fff; transition:all .2s ease; }
+        .filter-chip.active { background:#1d1d1f; color:#fff; border-color:#1d1d1f; }
+        a:focus-visible, button:focus-visible, input:focus-visible { outline:2px solid #FFDE59; outline-offset:2px; }
+        html { scroll-behavior:smooth; }
+    </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col">
+
+    <!-- Global Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between text-xs text-paper font-light tracking-wide">
+            <a href="#" onclick="goHome(); return false;" class="opacity-90 hover:opacity-100 transition flex items-center gap-2">
+                <img src="assets/logo.png" alt="종로유학원" class="h-5 w-auto">
+                <span class="font-semibold text-white tracking-normal ml-1 border-l border-gray-600 pl-2">영국 진학 AI</span>
+            </a>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#" onclick="startConsulting('ug'); return false;" class="opacity-80 hover:opacity-100 transition">학부 진단</a>
+                <a href="#" onclick="startConsulting('pg'); return false;" class="opacity-80 hover:opacity-100 transition">석사 진단</a>
+                <a href="https://www.coei.com" target="_blank" rel="noopener" class="opacity-80 hover:opacity-100 transition">종로유학원</a>
+            </div>
+            <a href="https://www.coei.com/info/consult/reserve.php" target="_blank" rel="noopener" class="pill-btn bg-gold text-black px-4 py-1.5 font-semibold hover:bg-gold-deep transition">상담예약</a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main id="app-container" class="flex-grow pt-14 flex flex-col">
+
+        <!-- Hero Section -->
+        <section id="hero-section" class="section-dark flex-grow flex flex-col items-center justify-center text-center px-4 relative overflow-hidden min-h-[90vh] py-16">
+            <div class="z-10 fade-in-up" style="animation-delay:.1s;">
+                <h2 class="text-gold font-semibold tracking-wide text-sm md:text-base mb-4 uppercase">Study in the UK · QS 2027 Data</h2>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter2 leading-tight mb-6">
+                    영국 대학 진학,<br>AI로 설계하다.
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-400 font-light tracking-tight2 mb-10 max-w-2xl mx-auto">
+                    QS 세계대학랭킹 2027 · 2026-27 입시 데이터 기반.<br class="hidden md:block">학부부터 석사까지, 내 상황에 맞는 진학 루트를 3분 만에 확인하세요.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button onclick="startConsulting('ug')" class="pill-btn bg-gold hover:bg-gold-deep text-black px-8 py-4 text-lg font-semibold inline-flex items-center justify-center gap-2 shadow-lg shadow-yellow-900/40 w-full sm:w-auto">
+                        학부 진학 진단 <span class="text-sm font-medium opacity-70">파운데이션 · IYO</span>
+                    </button>
+                    <button onclick="startConsulting('pg')" class="pill-btn bg-transparent border border-gray-600 text-white hover:border-gold hover:text-gold px-8 py-4 text-lg font-medium inline-flex items-center justify-center gap-2 w-full sm:w-auto">
+                        석사 진학 진단 <span class="text-sm font-normal opacity-60">Direct · 프리마스터</span>
+                    </button>
+                </div>
+                <p class="text-[13px] text-gray-500 mt-8">영국 대학 22개교 학부 경로 데이터 · 전공별 석사 추천 대학 수록</p>
+            </div>
+        </section>
+
+        <!-- Interactive Chat Section -->
+        <section id="chat-section" class="section-dark flex-grow py-20 hidden">
+            <div class="max-w-2xl mx-auto px-4 flex flex-col h-full min-h-[70vh]">
+                <div id="chat-history" class="flex-grow overflow-y-auto space-y-6 mb-8 pb-4">
+                </div>
+                <div id="options-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3 fade-in-up mt-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Result Section -->
+        <section id="result-section" class="hidden w-full bg-white text-ink2">
+        </section>
+
+    </main>
+
+    <script>
+
+        // ── 공통 상수 · 상태 ─────────────────────────────────────────
+        const CONSULT_URL = 'https://www.coei.com/info/consult/reserve.php';
+        const YT_URL = 'https://www.youtube.com/@COEI1982';
+        let currentState = {};
+        let step = 0;
+        let track = 'pg'; // 'pg' 석사 | 'ug' 학부
+
+        const OPT_BTN_CLASS = 'pill-btn bg-[#2d2d2f] text-[#f5f5f7] border border-[#3d3d40] hover:bg-gold hover:border-gold hover:text-black py-3.5 px-4 font-medium shadow-sm text-[14px] md:text-[15px] text-center w-full';
+
+        // TOEFL iBT -> IELTS 환산
+        function toeflToIelts(s) {
+            if (s >= 118) return 9.0; if (s >= 115) return 8.5; if (s >= 110) return 8.0;
+            if (s >= 102) return 7.5; if (s >= 94) return 7.0; if (s >= 79) return 6.5;
+            if (s >= 60) return 6.0; if (s >= 46) return 5.5; if (s >= 35) return 5.0;
+            if (s >= 32) return 4.5; return 4.0;
+        }
+        // PTE Academic -> IELTS 환산
+        function pteToIelts(s) {
+            if (s >= 89) return 8.5; if (s >= 84) return 8.0; if (s >= 76) return 7.5;
+            if (s >= 66) return 7.0; if (s >= 56) return 6.5; if (s >= 46) return 6.0;
+            if (s >= 36) return 5.5; if (s >= 29) return 5.0; if (s >= 23) return 4.5;
+            return 4.0;
+        }
+
+const majorCategories = {
+            "경영 / 미디어 / 서비스 계열": ["경영학 / MBA", "마케팅", "회계 / 재무", "미디어 / 커뮤니케이션", "스포츠 경영"],
+            "공학 / IT 계열": ["컴퓨터과학 / IT", "데이터사이언스 / AI", "사이버보안", "기계 / 항공우주공학", "토목 / 구조공학", "전기 / 전자공학"],
+            "인문 / 사회 / 교육 계열": ["국제개발학", "공공정책 / 행정 (MPA)", "법학 (LLM)", "TESOL / 교육학", "박물관학 / 예술경영"],
+            "의생명 / 헬스케어 계열": ["생의과학 / 바이오", "심리학 (Conversion 포함)", "공중보건 (Public Health)"]
+        };
+
+        const majorData = {
+            "경영학 / MBA": {
+                desc: "기업의 데이터와 시장을 분석하여 비즈니스 방향을 예측하고 의사결정을 내리는 현대 경영의 핵심 분야입니다. MBA, Management, Business Analytics 등이 포함되며 실무 연계가 뛰어납니다.",
+                schools: [
+                    {
+                        name: "University of Warwick",
+                        course: "MSc Business with Marketing / MSc Business Analytics",
+                        rank: "세계 68위 / 영국 10위 (QS 2027, 비즈니스 초강세)",
+                        location: "코번트리 (Coventry, 잉글랜드 중부)",
+                        tuition: "약 £35,000 ~ £38,000",
+                        desc: "Warwick Business School(WBS)은 세계 1%에 해당하는 Triple Crown 인증을 받은 명문입니다. 리서치뿐만 아니라 강력한 산학연계 커리어 센터를 운영합니다.",
+                        link: "https://www.wbs.ac.uk/courses/postgraduate/" },
+                    {
+                        name: "University of Manchester",
+                        course: "MSc Management / MSc International Business",
+                        rank: "세계 40위 (QS 2027, 러셀그룹)",
+                        location: "맨체스터 (Manchester, 잉글랜드 북서부)",
+                        tuition: "약 £33,000 ~ £36,000",
+                        desc: "Alliance MBS는 영국 최대 규모의 비즈니스 스쿨 중 하나로, 철저한 실무 중심의 산학 연계 프로젝트(Business in Practice)를 제공합니다.",
+                        link: "https://www.alliancembs.manchester.ac.uk/study/masters/" }
+                ]
+            },
+            "마케팅": {
+                desc: "소비자 심리와 데이터 분석을 기반으로 브랜드 전략, 광고, 디지털 마케팅을 설계하는 분야입니다. 영국 석사는 1년 과정으로 글로벌 마케팅 실무 역량을 압축적으로 키울 수 있습니다.",
+                schools: [
+                    {
+                        name: "University of Manchester",
+                        course: "MSc Marketing",
+                        rank: "세계 40위 (QS 2027, 러셀그룹)",
+                        location: "맨체스터 (Manchester, 잉글랜드 북서부)",
+                        tuition: "약 £32,000 ~ £35,000",
+                        desc: "Alliance MBS의 마케팅 석사는 소비자 행동, 브랜드 관리, 디지털 마케팅을 아우르며 글로벌 기업과의 라이브 프로젝트 기회가 풍부합니다.",
+                        link: "https://www.alliancembs.manchester.ac.uk/study/masters/" },
+                    {
+                        name: "University of Leeds",
+                        course: "MA Advertising and Marketing",
+                        rank: "세계 77위 / 영국 12위 (QS 2027, 러셀그룹)",
+                        location: "리즈 (Leeds, 잉글랜드 북부)",
+                        tuition: "약 £28,000 ~ £30,000",
+                        desc: "Leeds University Business School의 대표 인기 과정으로, 광고 기획과 마케팅 전략을 균형 있게 다루며 실무 포트폴리오 중심 커리큘럼을 운영합니다.",
+                        link: "https://www.leeds.ac.uk/masters-courses" }
+                ]
+            },
+            "회계 / 재무": {
+                desc: "기업 재무제표 분석, 투자, 금융시장 운용을 다루는 분야로 ACCA·CFA 등 국제 자격과의 연계가 뛰어납니다. 런던 금융가(City) 취업을 목표로 하는 유학생에게 가장 선호되는 전공 중 하나입니다.",
+                schools: [
+                    {
+                        name: "University of Bath",
+                        course: "MSc Accounting and Finance",
+                        rank: "세계 125위 / 영국 19위 (QS 2027, 경영 명문)",
+                        location: "바스 (Bath, 잉글랜드 남서부)",
+                        tuition: "약 £31,000 ~ £34,000",
+                        desc: "Bath School of Management는 영국 내 취업률 최상위권 비즈니스 스쿨로, 회계·재무 분야에서 탄탄한 커리큘럼과 금융권 네트워크를 자랑합니다.",
+                        link: "https://www.bath.ac.uk/" },
+                    {
+                        name: "Lancaster University",
+                        course: "MSc Accounting and Financial Management",
+                        rank: "Triple Crown 인증 LUMS 보유 (영국 상위권)",
+                        location: "랭커스터 (Lancaster, 잉글랜드 북서부)",
+                        tuition: "약 £28,000 ~ £31,000",
+                        desc: "Lancaster University Management School(LUMS)은 세계 1% Triple Crown 인증 비즈니스 스쿨로, 회계·재무 리서치 분야에서 영국 최상위권 평가를 받습니다.",
+                        link: "https://www.lancaster.ac.uk/study/postgraduate/" }
+                ]
+            },
+            "미디어 / 커뮤니케이션": {
+                desc: "미디어 종주국인 영국의 선진화된 커뮤니케이션 이론과 저널리즘 실무, 문화 콘텐츠 산업 전략을 심도 있게 탐구하는 분야입니다.",
+                schools: [
+                    {
+                        name: "Goldsmiths, University of London",
+                        course: "MA Media & Communications",
+                        rank: "미디어 & 커뮤니케이션 세계 12위 (QS 전공랭킹)",
+                        location: "런던 (London, 잉글랜드)",
+                        tuition: "약 £24,000 ~ £26,000",
+                        desc: "창의적이고 혁신적인 런던대 소속 대학으로, 미디어, 문화연구, 예술 분야에서 세계적인 명성을 구가하며 수많은 미디어계 거장을 배출했습니다.",
+                        link: "https://www.gold.ac.uk/pg/" },
+                    {
+                        name: "King's College London (KCL)",
+                        course: "MA Cultural & Creative Industries",
+                        rank: "세계 37위 (QS 2027, 러셀그룹)",
+                        location: "런던 (London, 중심부)",
+                        tuition: "약 £29,000 ~ £32,000",
+                        desc: "런던 중심부에 위치해 방송·출판·문화예술 산업과의 접점이 뛰어나며, 문화산업 정책과 콘텐츠 비즈니스를 아우르는 커리큘럼을 제공합니다.",
+                        link: "https://www.kcl.ac.uk/study/postgraduate-taught" }
+                ]
+            },
+            "스포츠 경영": {
+                desc: "프리미어리그의 나라 영국에서 배우는 스포츠 비즈니스, 구단 경영, 스포츠 마케팅 분야입니다. 글로벌 스포츠 산업 전반의 경영 전략을 다룹니다.",
+                schools: [
+                    {
+                        name: "Loughborough University",
+                        course: "MSc Sport Management",
+                        rank: "스포츠 관련 학과 부동의 세계 1위 (QS 전공랭킹)",
+                        location: "러프버러 (Loughborough, 잉글랜드 중부)",
+                        tuition: "약 £31,000 ~ £33,000",
+                        desc: "수년 연속 스포츠 관련 전공 세계 1위를 차지하고 있으며, 올림픽 선수촌 수준의 시설과 글로벌 스포츠 기업들과의 압도적인 네트워크를 자랑합니다.",
+                        link: "https://www.lboro.ac.uk/study/postgraduate/" },
+                    {
+                        name: "University of Birmingham",
+                        course: "MSc Sport Policy, Business and Management",
+                        rank: "세계 68위 (QS 2027, 러셀그룹)",
+                        location: "버밍엄 (Birmingham, 잉글랜드 중부)",
+                        tuition: "약 £27,000 ~ £29,000",
+                        desc: "스포츠 정책과 비즈니스를 함께 다루는 균형 잡힌 커리큘럼으로, 러셀그룹 명문에서 스포츠 산업 경영 전문성을 쌓을 수 있습니다.",
+                        link: "https://www.birmingham.ac.uk/postgraduate" }
+                ]
+            },
+            "컴퓨터과학 / IT": {
+                desc: "소프트웨어 개발, 알고리즘, 시스템 설계를 다루는 IT 산업의 근간 분야입니다. 영국은 유럽 최대 테크 허브(런던)를 중심으로 졸업 후 취업 기회가 풍부합니다.",
+                schools: [
+                    {
+                        name: "University College London (UCL)",
+                        course: "MSc Computer Science",
+                        rank: "세계 8위 (QS 2027, 러셀그룹)",
+                        location: "런던 (London, 블룸즈버리 중심)",
+                        tuition: "약 £40,000 ~ £44,000",
+                        desc: "세계 최상위권 종합대학으로, 컴퓨터과학 전 분야에서 뛰어난 연구 역량과 런던 테크 산업과의 강력한 연결고리를 갖추고 있습니다.",
+                        link: "https://www.ucl.ac.uk/prospective-students/graduate/" },
+                    {
+                        name: "University of Manchester",
+                        course: "MSc Advanced Computer Science",
+                        rank: "세계 40위 (QS 2027, 러셀그룹)",
+                        location: "맨체스터 (Manchester, 잉글랜드 북서부)",
+                        tuition: "약 £32,000 ~ £35,000",
+                        desc: "컴퓨터의 아버지 앨런 튜링이 재직했던 CS 명문으로, AI·소프트웨어공학·시스템 분야의 폭넓은 세부 트랙을 제공합니다.",
+                        link: "https://www.manchester.ac.uk/study/masters/" }
+                ]
+            },
+            "데이터사이언스 / AI": {
+                desc: "4차 산업혁명의 핵심인 빅데이터와 인공지능을 다룹니다. 데이터 수집부터 모델링, 시각화까지 미래 유망 IT 산업의 고도화된 기술을 학습합니다.",
+                schools: [
+                    {
+                        name: "University of Edinburgh",
+                        course: "MSc Data Science / MSc Artificial Intelligence",
+                        rank: "세계 35위 (QS 2027, CS 분야 유럽 최고 수준)",
+                        location: "에든버러 (Edinburgh, 스코틀랜드)",
+                        tuition: "약 £38,500 ~ £42,000",
+                        desc: "인포매틱스 분야에서 영국 최고 수준의 연구 성과를 자랑하며, 인공지능과 빅데이터 분야에서 스코틀랜드와 유럽의 선두주자입니다.",
+                        link: "https://www.ed.ac.uk/informatics/postgraduate" },
+                    {
+                        name: "King's College London (KCL)",
+                        course: "MSc Data Science",
+                        rank: "세계 37위 (QS 2027, 러셀그룹)",
+                        location: "런던 (London, 중심부)",
+                        tuition: "약 £35,000 ~ £39,000",
+                        desc: "런던 중심부에 위치하여 금융권 및 글로벌 IT 기업들과의 네트워크가 뛰어납니다. 데이터 알고리즘과 응용 데이터 분석 연구에 특화되어 있습니다.",
+                        link: "https://www.kcl.ac.uk/study/postgraduate-taught" }
+                ]
+            },
+            "사이버보안": {
+                desc: "해킹 방어 체계 구축, 암호학, 보안 시스템 설계를 다루는 분야입니다. 영국 정부(NCSC) 인증 과정이 다수 운영되어 보안 전문가 커리어에 직결됩니다.",
+                schools: [
+                    {
+                        name: "King's College London (KCL)",
+                        course: "MSc Cyber Security",
+                        rank: "세계 37위 (QS 2027, 러셀그룹)",
+                        location: "런던 (London, 중심부)",
+                        tuition: "약 £35,000 ~ £38,000",
+                        desc: "복잡한 시스템의 보안 및 사이버 위협 분석에 특화되어 있으며, 런던 금융권·정부기관과의 보안 협력 프로젝트가 활발합니다.",
+                        link: "https://www.kcl.ac.uk/study/postgraduate-taught" },
+                    {
+                        name: "University of Southampton",
+                        course: "MSc Cyber Security",
+                        rank: "세계 111위 / 영국 17위 (QS 2027, 러셀그룹)",
+                        location: "사우샘프턴 (Southampton, 잉글랜드 남부)",
+                        tuition: "약 £30,000 ~ £33,000",
+                        desc: "영국 정부 공인 사이버보안 연구 우수센터(ACE-CSR)로 지정된 명문으로, 전자·컴퓨터공학(ECS) 학부의 탄탄한 인프라를 기반으로 합니다.",
+                        link: "https://www.southampton.ac.uk/study/postgraduate-taught" }
+                ]
+            },
+            "기계 / 항공우주공학": {
+                desc: "최첨단 모빌리티(항공우주/자동차)와 제조 기술을 다루는 산업의 근간입니다. 영국은 전통적으로 공학 분야에서 세계적인 산학협력 네트워크를 갖추고 있습니다.",
+                schools: [
+                    {
+                        name: "Cranfield University",
+                        course: "MSc Aerospace Engineering / Automotive Engineering",
+                        rank: "항공우주 분야 영국 1위 (대학원 중심 대학)",
+                        location: "크랜필드 (Cranfield, 잉글랜드 베드퍼드셔)",
+                        tuition: "약 £28,000 ~ £30,000",
+                        desc: "영국 내 유일하게 공항을 자체 소유한 대학원으로, Rolls-Royce, BAE Systems 등 글로벌 항공/자동차 기업들과의 독보적인 공동 프로젝트를 진행합니다.",
+                        link: "https://www.cranfield.ac.uk/themes/aerospace" },
+                    {
+                        name: "University of Sheffield",
+                        course: "MSc Mechanical Engineering / Aerospace Engineering",
+                        rank: "세계 82위 / 영국 14위 (QS 2027, 러셀그룹)",
+                        location: "셰필드 (Sheffield, 잉글랜드 중북부)",
+                        tuition: "약 £30,000 ~ £32,000",
+                        desc: "러셀그룹 소속으로, 기계·항공공학 분야에서 탁월한 연구 실적과 첨단 실험 시설(Diamond 건물), Boeing과의 공동 연구센터(AMRC)를 보유하고 있습니다.",
+                        link: "https://www.sheffield.ac.uk/engineering" }
+                ]
+            },
+            "토목 / 구조공학": {
+                desc: "인류의 생활환경을 설계하는 토목·구조·건설 분야입니다. 영국은 세계적인 엔지니어링 컨설팅 기업(Arup, Atkins 등)의 본고장으로 취업 연계가 강합니다.",
+                schools: [
+                    {
+                        name: "University of Sheffield",
+                        course: "MSc Civil Engineering / Structural Engineering",
+                        rank: "세계 82위 / 영국 14위 (QS 2027, 러셀그룹)",
+                        location: "셰필드 (Sheffield, 잉글랜드 중북부)",
+                        tuition: "약 £30,000 ~ £32,000",
+                        desc: "토목공학 분야에서 영국 최상위권 연구 실적을 보유하며, 구조·지반·수자원 등 폭넓은 세부 전공 트랙을 제공합니다.",
+                        link: "https://www.sheffield.ac.uk/engineering" },
+                    {
+                        name: "University of Leeds",
+                        course: "MSc (Eng) Civil Engineering",
+                        rank: "세계 77위 / 영국 12위 (QS 2027, 러셀그룹)",
+                        location: "리즈 (Leeds, 잉글랜드 북부)",
+                        tuition: "약 £29,000 ~ £31,000",
+                        desc: "영국 최대 규모 공과대학 중 하나로, 구조공학·환경토목 분야의 산업체 연계 프로젝트와 JBM 공인 커리큘럼을 운영합니다.",
+                        link: "https://www.leeds.ac.uk/masters-courses" }
+                ]
+            },
+            "전기 / 전자공학": {
+                desc: "반도체, 통신, 전력 시스템, 임베디드 시스템을 다루는 분야입니다. AI 하드웨어와 신재생 에너지 산업 성장으로 수요가 급증하고 있습니다.",
+                schools: [
+                    {
+                        name: "University of Southampton",
+                        course: "MSc Electronic Engineering",
+                        rank: "세계 111위 / 영국 17위 (QS 2027, 러셀그룹)",
+                        location: "사우샘프턴 (Southampton, 잉글랜드 남부)",
+                        tuition: "약 £30,000 ~ £33,000",
+                        desc: "전자컴퓨터공학부(ECS)는 영국 전자공학 분야의 최고 명문 중 하나로, 반도체 클린룸 등 세계적 수준의 연구 인프라를 자랑합니다.",
+                        link: "https://www.southampton.ac.uk/study/postgraduate-taught" },
+                    {
+                        name: "University of Manchester",
+                        course: "MSc Electrical and Electronic Engineering",
+                        rank: "세계 40위 (QS 2027, 러셀그룹)",
+                        location: "맨체스터 (Manchester, 잉글랜드 북서부)",
+                        tuition: "약 £32,000 ~ £34,000",
+                        desc: "그래핀을 최초 분리한 노벨상 연구의 산실로, 전력시스템·반도체·나노소재 분야에서 세계적인 연구 역량을 보유하고 있습니다.",
+                        link: "https://www.manchester.ac.uk/study/masters/" }
+                ]
+            },
+            "국제개발학": {
+                desc: "환경, 빈곤, 국제관계 등 글로벌 이슈를 연구하는 분야로, UN 등 국제기구 진출을 목표로 하는 학생과 공무원 국비 유학으로 가장 선호됩니다.",
+                schools: [
+                    {
+                        name: "University of Sussex",
+                        course: "MA Development Studies",
+                        rank: "개발학(Development Studies) 부동의 세계 1위",
+                        location: "브라이튼 (Brighton, 잉글랜드 남부)",
+                        tuition: "약 £23,000 ~ £25,000",
+                        desc: "수년간 하버드, 옥스퍼드를 제치고 개발학 분야 세계 1위를 수성하고 있는 명실상부한 최고 명문으로, UN 등 국제기구 진출에 유리합니다.",
+                        link: "https://www.sussex.ac.uk/study/masters/global-studies" },
+                    {
+                        name: "University of Manchester",
+                        course: "MSc International Development",
+                        rank: "개발학 세계 Top 10 (Global Development Institute)",
+                        location: "맨체스터 (Manchester, 잉글랜드 북서부)",
+                        tuition: "약 £25,000 ~ £27,000",
+                        desc: "유럽 최대 규모의 개발학 연구소(GDI)를 보유하고 있으며, 빈곤·환경·글로벌 거버넌스 등 다양한 세부 트랙을 선택할 수 있습니다.",
+                        link: "https://www.manchester.ac.uk/study/masters/" }
+                ]
+            },
+            "공공정책 / 행정 (MPA)": {
+                desc: "국가 발전의 틀을 짜는 행정학(MPA)과 공공정책학을 다룹니다. 한국 공무원 및 공공기관 국비 유학으로 가장 선호되는 분야입니다.",
+                schools: [
+                    {
+                        name: "University of York",
+                        course: "Master of Public Administration (MPA)",
+                        rank: "세계 169위 / 영국 25위 (QS 2026, 사회정책 Top 10)",
+                        location: "요크 (York, 잉글랜드 북부)",
+                        tuition: "약 £24,000 ~ £26,000",
+                        desc: "공공정책(Public Policy) 및 행정학(MPA) 분야에서 뛰어난 성과를 내고 있으며, 한국 공무원 및 정부 산하기관 임직원들이 가장 선호하는 대학 중 하나입니다.",
+                        link: "https://www.york.ac.uk/study/postgraduate/courses/" },
+                    {
+                        name: "University of Glasgow",
+                        course: "MSc Public Policy & Management",
+                        rank: "세계 80위 / 영국 13위 (QS 2027, 러셀그룹)",
+                        location: "글래스고 (Glasgow, 스코틀랜드)",
+                        tuition: "약 £25,000 ~ £27,000",
+                        desc: "스코틀랜드 명문 러셀그룹 대학으로, 공공관리와 정책 분석을 결합한 실무형 커리큘럼을 제공하며 국제 공공부문 네트워크가 탄탄합니다.",
+                        link: "https://www.gla.ac.uk/postgraduate/" }
+                ]
+            },
+            "법학 (LLM)": {
+                desc: "국제법, 상법, 금융법 중심의 영미법 석사(LLM) 과정입니다. 영국은 국제 상사중재와 금융법의 중심지로 글로벌 로펌 커리어에 직결됩니다.",
+                schools: [
+                    {
+                        name: "Queen Mary University of London",
+                        course: "LLM (International Business Law 등 20+ 트랙)",
+                        rank: "세계 110위 / 영국 18위 (QS 2026, LLM 명문)",
+                        location: "런던 (London, 잉글랜드)",
+                        tuition: "약 £27,000 ~ £30,000",
+                        desc: "런던대 소속 러셀그룹 대학으로, 세계 최대 규모의 LLM 프로그램과 국제상사법·중재 분야의 압도적인 명성을 자랑합니다.",
+                        link: "https://www.qmul.ac.uk/postgraduate/" },
+                    {
+                        name: "University of Leeds",
+                        course: "LLM International Law",
+                        rank: "세계 77위 / 영국 12위 (QS 2027, 러셀그룹)",
+                        location: "리즈 (Leeds, 잉글랜드 북부)",
+                        tuition: "약 £26,000 ~ £28,000",
+                        desc: "법학(LLM) 분야에서 영국 상위권에 위치하며, 다양한 모듈 선택권을 통해 학생 맞춤형 커리큘럼을 제공합니다.",
+                        link: "https://www.leeds.ac.uk/masters-courses" }
+                ]
+            },
+            "TESOL / 교육학": {
+                desc: "영어 교육의 본고장에서 배우는 TESOL과 교육학입니다. 교사 경력자와 교육 정책 전문가를 목표로 하는 학생 모두에게 적합합니다.",
+                schools: [
+                    {
+                        name: "University College London (UCL)",
+                        course: "MA Education (IOE)",
+                        rank: "교육학(Education) 부동의 세계 1위 (QS 전공랭킹)",
+                        location: "런던 (London, 블룸즈버리 중심)",
+                        tuition: "약 £27,000 ~ £30,000",
+                        desc: "UCL 교육대학원(IOE)은 수년 연속 교육학 분야 세계 1위를 지키고 있는 교육학의 최고 명문으로, 교육정책·리더십·TESOL 등 폭넓은 과정을 운영합니다.",
+                        link: "https://www.ucl.ac.uk/ioe/" },
+                    {
+                        name: "University of Leeds",
+                        course: "MA TESOL",
+                        rank: "세계 77위 / 영국 12위 (QS 2027, 러셀그룹)",
+                        location: "리즈 (Leeds, 잉글랜드 북부)",
+                        tuition: "약 £26,000 ~ £28,000",
+                        desc: "교육학 및 영어교육(TESOL) 분야에서 영국 상위권에 위치하며, 다양한 모듈 선택권을 통해 학생 맞춤형 커리큘럼을 제공합니다.",
+                        link: "https://www.leeds.ac.uk/masters-courses" }
+                ]
+            },
+            "박물관학 / 예술경영": {
+                desc: "예술경영과 박물관학(Museum Studies)을 심도 있게 탐구하는 문화/예술 융합 학문입니다. 박물관·갤러리·문화기관 커리어로 이어집니다.",
+                schools: [
+                    {
+                        name: "University of Leicester",
+                        course: "MA/MSc Museum Studies",
+                        rank: "박물관학(Museum Studies) 압도적 세계 선두",
+                        location: "레스터 (Leicester, 잉글랜드 중부)",
+                        tuition: "약 £22,000 ~ £24,000",
+                        desc: "박물관학 분야에서 가장 오랜 역사와 최고 수준의 연구 실적을 자랑하며, 전 세계 박물관 및 갤러리와 광범위한 산학연계(Placement)를 맺고 있습니다.",
+                        link: "https://le.ac.uk/museum-studies" },
+                    {
+                        name: "Goldsmiths, University of London",
+                        course: "MA Arts Administration & Cultural Policy",
+                        rank: "예술 & 디자인 분야 세계 상위권 (QS 전공랭킹)",
+                        location: "런던 (London, 잉글랜드)",
+                        tuition: "약 £24,000 ~ £26,000",
+                        desc: "런던의 풍부한 문화예술 인프라를 활용한 예술경영·문화정책 과정으로, 갤러리·극장·문화재단과의 현장 연계가 활발합니다.",
+                        link: "https://www.gold.ac.uk/pg/" }
+                ]
+            },
+            "생의과학 / 바이오": {
+                desc: "첨단 의공학(Biomedical)부터 생명과학, 바이오테크까지 인간의 건강을 연구하는 분야입니다. 제약·바이오 산업과 연구직 커리어로 이어집니다.",
+                schools: [
+                    {
+                        name: "University College London (UCL)",
+                        course: "MSc Biomedical Science",
+                        rank: "세계 8위 / 생명과학 및 의학 세계 최상위 (QS 2027)",
+                        location: "런던 (London, 블룸즈버리 중심)",
+                        tuition: "약 £35,000 ~ £40,000",
+                        desc: "런던 중심부에 위치한 명문으로, 뇌과학 및 생명과학, 공중보건 분야에서 세계 최상위권의 연구 역량과 병원 인프라를 갖추고 있습니다.",
+                        link: "https://www.ucl.ac.uk/prospective-students/graduate/" },
+                    {
+                        name: "University of Glasgow",
+                        course: "MSc Biomedical Sciences",
+                        rank: "세계 80위 / 영국 13위 (QS 2027, 러셀그룹)",
+                        location: "글래스고 (Glasgow, 스코틀랜드)",
+                        tuition: "약 £28,000 ~ £31,000",
+                        desc: "생명의학 연구 분야에서 영국 최상위권 인프라를 갖춘 스코틀랜드 명문으로, 대학병원과 연계된 실습 중심 커리큘럼을 제공합니다.",
+                        link: "https://www.gla.ac.uk/postgraduate/" }
+                ]
+            },
+            "심리학 (Conversion 포함)": {
+                desc: "범죄/상담 심리학과 비전공자를 위한 심리학 전환(Conversion) 과정을 포함합니다. BPS(영국심리학회) 인증 과정 이수 시 심리학 커리어의 기반이 됩니다.",
+                schools: [
+                    {
+                        name: "University of Bristol",
+                        course: "MSc Psychology (Conversion) / Applied Neuropsychology",
+                        rank: "세계 57위 (QS 2027, 심리학/보건 영국 Top 10)",
+                        location: "브리스톨 (Bristol, 잉글랜드 남서부)",
+                        tuition: "약 £30,000 ~ £33,000",
+                        desc: "비전공자를 위한 심리학 석사(Conversion - BPS 인증) 과정이 매우 우수하며, 응용 신경심리학 등 세부 전공에서도 뛰어난 성과를 보여줍니다.",
+                        link: "https://www.bristol.ac.uk/study/postgraduate/" },
+                    {
+                        name: "University of York",
+                        course: "MSc Psychology (Conversion)",
+                        rank: "세계 169위 / 영국 25위 (QS 2026, 심리학 강세)",
+                        location: "요크 (York, 잉글랜드 북부)",
+                        tuition: "약 £26,000 ~ £28,000",
+                        desc: "BPS 인증 심리학 전환 과정을 운영하는 심리학 연구 명문으로, 합리적인 학비와 안정적인 학업 환경으로 한국 학생들의 만족도가 높습니다.",
+                        link: "https://www.york.ac.uk/study/postgraduate/courses/" }
+                ]
+            },
+            "공중보건 (Public Health)": {
+                desc: "인구 집단의 건강 증진과 질병 예방 정책을 연구하는 분야입니다. 보건 행정, 역학, 글로벌 헬스 커리어와 국제기구(WHO 등) 진출로 이어집니다.",
+                schools: [
+                    {
+                        name: "University of Edinburgh",
+                        course: "Master of Public Health (MPH)",
+                        rank: "세계 35위 (QS 2027, 의학·보건 세계 최상위권)",
+                        location: "에든버러 (Edinburgh, 스코틀랜드)",
+                        tuition: "약 £31,000 ~ £34,000",
+                        desc: "세계적인 의과대학 전통을 기반으로 한 MPH 과정으로, 역학·보건정책·글로벌 헬스를 아우르는 커리큘럼을 제공합니다.",
+                        link: "https://www.ed.ac.uk/studying/postgraduate" },
+                    {
+                        name: "University of Glasgow",
+                        course: "Master of Public Health (MPH)",
+                        rank: "세계 80위 / 영국 13위 (QS 2027, 러셀그룹)",
+                        location: "글래스고 (Glasgow, 스코틀랜드)",
+                        tuition: "약 £26,000 ~ £29,000",
+                        desc: "보건학 연구 명문으로 WHO 협력센터를 보유하고 있으며, 실무 중심의 공중보건 교육과 합리적인 학비가 강점입니다.",
+                        link: "https://www.gla.ac.uk/postgraduate/" }
+                ]
+            }
+        };
+
+        // ── 석사 진단 질문 ───────────────────────────────────────────
+        const pgQuestions = [
+            {
+                key: "english",
+                q: "현재 보유하신 공인 영어 성적(IELTS, TOEFL, PTE 등)이 있으신가요?<br><span class=\"block mt-3 text-[13px] text-gray-500 leading-relaxed\">※ 영국 대학은 총점뿐 아니라 각 영역별(Writing/Speaking 등) 세부 점수를 함께 보기 때문에, 최종 합격 가능 여부는 정확한 점수 확인이 필요합니다.</span>",
+                options: [
+                    { label: "IELTS 7.0 이상 (안정권)", value: "IELTS 7.0 이상" },
+                    { label: "IELTS 6.0 ~ 6.5 (보완/프리세셔널)", value: "IELTS 6.0~6.5" },
+                    { label: "IELTS 5.5 이하 / 아직 준비 전", value: "준비 전" },
+                    { label: "기타 (TOEFL · PTE 등 다른 시험)", value: "__other__" }
+                ],
+                bandOf: s => s >= 7 ? "IELTS 7.0 이상" : (s >= 6 ? "IELTS 6.0~6.5" : "준비 전")
+            },
+            {
+                key: "gpa",
+                q: "학부(대학교) 최종 성적(GPA)은 어느 정도이신가요? (4.5 만점 기준)",
+                options: [
+                    { label: "4.0 이상 (매우 우수)", value: "4.0 이상" },
+                    { label: "3.5 ~ 3.9 (양호/보통)", value: "3.5~3.9" },
+                    { label: "3.0 ~ 3.4 (보완 필요)", value: "3.0~3.4" },
+                    { label: "3.0 미만 (패스웨이 고려)", value: "3.0 미만" }
+                ]
+            },
+            {
+                key: "major",
+                q: "영국 석사 과정에서 희망하시는 전공 계열을 먼저 선택해주세요. 계열 선택 후 세부 전공을 고르실 수 있습니다.",
+                options: []
+            },
+            {
+                key: "sameMajor",
+                q: "지원하실 석사 전공이 학부 때 전공하신 분야와 동일한가요?",
+                options: [
+                    { label: "네, 동일/유사 전공입니다 (전공자)", value: "전공자" },
+                    { label: "아니요, 분야를 바꿉니다 (비전공자)", value: "비전공자" }
+                ],
+                note: "※ 학교별로 비전공자의 경우 관련 경력을 요구할 수 있습니다."
+            },
+            {
+                key: "target",
+                q: "진학 시 가장 중요하게 생각하시는 목표나 기준은 무엇인가요?",
+                options: [
+                    { label: "세계 랭킹 최상위권 (명성 위주)", value: "세계 랭킹 우선" },
+                    { label: "전공별 랭킹 및 실무/취업 연계", value: "실무 및 취업 연계" },
+                    { label: "나의 성적에 맞춘 가장 안정적인 합격", value: "안정성 우선" }
+                ]
+            }
+        ];
+
+        // ── 학부(파운데이션 · IYO) 데이터 — QS 2027 (2026.6 발표) 기준 ──
+        const UG_UNIS = [
+            { n:"Imperial College London", k:"임페리얼 칼리지 런던", qs:2, city:"런던", grp:"direct", fnd:null, iyo:false, url:"https://www.imperial.ac.uk/study/", note:"국제학생 파운데이션 미운영 — A-level·IB 등 인정 고교 과정 성적으로 직접 지원하는 최상위 이공계 명문입니다." },
+            { n:"University of Oxford", k:"옥스퍼드대학교", qs:4, city:"옥스퍼드", grp:"direct", fnd:null, iyo:false, url:"https://www.ox.ac.uk/admissions/undergraduate", note:"파운데이션 경로가 없어 A-level·IB 최상위 성적과 입학시험·인터뷰로 직접 지원합니다." },
+            { n:"University of Cambridge", k:"케임브리지대학교", qs:6, city:"케임브리지", grp:"direct", fnd:null, iyo:false, url:"https://www.undergraduate.study.cam.ac.uk/", note:"국제학생 대상 파운데이션이 없어 A-level·IB 최상위 성적으로 직접 지원합니다." },
+            { n:"University College London (UCL)", k:"유니버시티 칼리지 런던", qs:8, city:"런던", grp:"own", fnd:"UCL UPC (자체 운영)", iyo:false, url:"https://www.ucl.ac.uk/prospective-students/undergraduate", note:"1991년부터 자체 국제 파운데이션(UPC)을 운영 — 수료 성적으로 UCL 및 다른 상위권 대학 지원이 가능합니다." },
+            { n:"University of Edinburgh", k:"에든버러대학교", qs:35, city:"에든버러", grp:"own", fnd:"자체 국제 파운데이션", iyo:false, url:"https://www.ed.ac.uk/studying/undergraduate", note:"스코틀랜드 4년제 학사 구조로 파운데이션 없이도 지원 폭이 상대적으로 넓은 편입니다." },
+            { n:"King's College London", k:"킹스 칼리지 런던", qs:37, city:"런던", grp:"own", fnd:"King's Foundations (자체)", iyo:false, url:"https://www.kcl.ac.uk/study/undergraduate", note:"런던 중심의 명문으로 자체 국제 파운데이션을 통해 인문·사회·이공 전공으로 진입합니다." },
+            { n:"University of Manchester", k:"맨체스터대학교", qs:40, city:"맨체스터", grp:"into", fnd:"INTO Manchester 제휴", iyo:false, url:"https://www.manchester.ac.uk/study/undergraduate/", note:"INTO Manchester 파운데이션 수료 후 진입 — NCUK 연계로 다른 북부 명문 지원도 가능합니다." },
+            { n:"University of Bristol", k:"브리스톨대학교", qs:57, city:"브리스톨", grp:"kaplan", fnd:"Kaplan 제휴 파운데이션", iyo:false, url:"https://www.bristol.ac.uk/study/undergraduate/", note:"이공계·사회과학이 고루 강한 명문으로 파운데이션 경유 진학 수요가 많습니다." },
+            { n:"London School of Economics (LSE)", k:"런던정치경제대학교", qs:63, city:"런던", grp:"direct", fnd:null, iyo:false, url:"https://www.lse.ac.uk/study-at-lse/undergraduate", note:"자체 파운데이션이 없어 A-level·IB 직접 지원이 기본 — UCL UPC 등 타 기관 파운데이션 수료 후 지원하는 사례가 많습니다." },
+            { n:"University of Warwick", k:"워릭대학교", qs:68, city:"코번트리", grp:"own", fnd:"Warwick IFP (자체)", iyo:false, url:"https://warwick.ac.uk/study/undergraduate/", note:"1983년부터 운영된 영국 최장수급 자체 파운데이션(IFP) — 경영·수학 계열 진입 경로로 특히 유명합니다." },
+            { n:"University of Birmingham", k:"버밍엄대학교", qs:68, city:"버밍엄", grp:"kaplan", fnd:"BIA — Kaplan 제휴", iyo:false, url:"https://www.birmingham.ac.uk/study/undergraduate", note:"캠퍼스 내 파운데이션(BIA)을 대학 교수진이 직접 강의하고 Kaplan이 입학을 관리합니다." },
+            { n:"University of Leeds", k:"리즈대학교", qs:77, city:"리즈", grp:"sg", fnd:"Leeds ISC — Study Group 제휴", iyo:true, url:"https://www.leeds.ac.uk/undergraduate", note:"파운데이션과 IYO를 모두 운영 — 비즈니스 계열 2학년 편입 루트가 활발합니다." },
+            { n:"University of Glasgow", k:"글래스고대학교", qs:80, city:"글래스고", grp:"kaplan", fnd:"GIC — Kaplan 제휴", iyo:false, url:"https://www.gla.ac.uk/undergraduate/", note:"Kaplan 제휴 GIC 파운데이션 경유 — 스코틀랜드 명문 특유의 폭넓은 전공 선택이 강점입니다." },
+            { n:"University of Sheffield", k:"셰필드대학교", qs:82, city:"셰필드", grp:"sg", fnd:"USIC — Study Group 제휴", iyo:true, url:"https://www.sheffield.ac.uk/undergraduate", note:"USIC에서 파운데이션·IYO 모두 운영 — 공학 계열 진입 경로가 탄탄합니다." },
+            { n:"Durham University", k:"더럼대학교", qs:85, city:"더럼", grp:"sg", fnd:"Durham ISC — Study Group 제휴", iyo:false, url:"https://www.durham.ac.uk/study/undergraduate/", note:"영국 전통 명문 — ISC 파운데이션 경유 진학이 기본이며, IYO 개설 여부는 학기별로 달라 상담 시 확인합니다." },
+            { n:"University of Nottingham", k:"노팅엄대학교", qs:97, city:"노팅엄", grp:"kaplan", fnd:"UNIC — Kaplan 제휴", iyo:true, url:"https://www.nottingham.ac.uk/studywithus/undergraduate/", note:"UNIC에서 파운데이션과 IYO를 모두 운영 — 비즈니스·공학 2학년 편입 경로가 열려 있습니다." },
+            { n:"University of Southampton", k:"사우샘프턴대학교", qs:111, city:"사우샘프턴", grp:"own", fnd:"자체 국제 파운데이션", iyo:false, url:"https://www.southampton.ac.uk/study/undergraduate", note:"공학·컴퓨터 강세의 러셀그룹 — 자체 파운데이션으로 이공 계열 진입이 안정적입니다." },
+            { n:"University of St Andrews", k:"세인트앤드루스대학교", qs:115, city:"세인트앤드루스", grp:"own", fnd:"자체 International Foundation", iyo:false, url:"https://www.st-andrews.ac.uk/subjects/study-options/pathway/international-foundation/", note:"영국 국내 평가 1~2위권 스코틀랜드 최고(最古) 명문 — 자체 파운데이션으로 진입합니다." },
+            { n:"University of Bath", k:"바스대학교", qs:125, city:"바스", grp:"direct", fnd:null, iyo:false, url:"https://www.bath.ac.uk/campaigns/undergraduate-courses/", note:"경영·건축 강세 명문 — 대형 국제 파운데이션이 없어 직접 지원 또는 타 기관 파운데이션 수료 후 지원합니다." },
+            { n:"University of Exeter", k:"엑서터대학교", qs:136, city:"엑서터", grp:"into", fnd:"INTO Exeter (캠퍼스 내)", iyo:true, url:"https://www.exeter.ac.uk/study/undergraduate/", note:"캠퍼스 내 INTO 센터에서 파운데이션·IYO 모두 운영 — 올해 QS 19계단 상승한 러셀그룹입니다." },
+            { n:"Newcastle University", k:"뉴캐슬대학교", qs:149, city:"뉴캐슬", grp:"into", fnd:"INTO Newcastle (캠퍼스 내)", iyo:true, url:"https://www.ncl.ac.uk/undergraduate/", note:"캠퍼스 내 INTO 센터에서 파운데이션·IYO(iCAS) 모두 운영 — 학생 도시 물가가 합리적입니다." },
+            { n:"Lancaster University", k:"랭커스터대학교", qs:164, city:"랭커스터", grp:"into", fnd:"Lancaster ISC — INTO 제휴", iyo:false, url:"https://www.lancaster.ac.uk/study/undergraduate/", note:"영국 국내 평가 Top 15 단골 명문 — ISC 파운데이션 경유, 세부 과정 개설은 상담 시 최신 확인합니다." }
+        ];
+
+        // ── 학부 진단 질문 ───────────────────────────────────────────
+        const ugQuestions = [
+            {
+                key: "status",
+                q: "현재 학업 상태를 알려주세요.",
+                options: [
+                    { label: "고등학교 2학년 재학 · 수료 예정", value: "hs2" },
+                    { label: "고3 재학 · 졸업 예정", value: "hs3" },
+                    { label: "고교 졸업 (검정고시 포함)", value: "grad" },
+                    { label: "해외고 · 국제학교 (A-level · IB 등)", value: "intl" }
+                ]
+            },
+            {
+                key: "grades",
+                q: "고교 내신 성적대는 어느 정도인가요?",
+                options: [
+                    { label: "상위권 (1 ~ 3등급대)", value: "top" },
+                    { label: "중위권 (4 ~ 6등급대)", value: "mid" },
+                    { label: "그 외 · 검정고시 · 산출 어려움", value: "etc" }
+                ],
+                note: "※ 파운데이션·IYO는 고교 내신과 IELTS를 함께 평가하며, 기관별 기준이 다릅니다."
+            },
+            {
+                key: "english",
+                q: "공인 영어 성적(IELTS 등)이 있으신가요?<br><span class=\"block mt-3 text-[13px] text-gray-500 leading-relaxed\">※ 파운데이션·IYO 입학은 비자 규정상 UKVI IELTS가 요구되는 경우가 많습니다. 영역별 세부 점수는 상담 시 함께 확인합니다.</span>",
+                options: [
+                    { label: "IELTS 5.5 이상", value: "high" },
+                    { label: "IELTS 4.5 ~ 5.0", value: "mid" },
+                    { label: "아직 없음 / 준비 전", value: "none" },
+                    { label: "기타 (TOEFL · PTE 등 다른 시험)", value: "__other__" }
+                ],
+                bandOf: s => s >= 5.5 ? "high" : (s >= 4.5 ? "mid" : "none")
+            },
+            {
+                key: "field",
+                q: "희망하는 전공 계열을 선택해주세요.",
+                options: [
+                    { label: "경영 · 경제 · 금융", value: "biz" },
+                    { label: "공학 (기계 · 전자 · 토목 등)", value: "eng" },
+                    { label: "컴퓨터 · 데이터 · AI", value: "cs" },
+                    { label: "사회과학 · 미디어 · 국제관계", value: "soc" },
+                    { label: "자연과학 · 수학", value: "sci" },
+                    { label: "인문 · 어학 · 예술", value: "arts" }
+                ]
+            },
+            {
+                key: "target",
+                q: "진학에서 가장 중요하게 생각하는 기준은 무엇인가요?",
+                options: [
+                    { label: "최상위권 도전 (옥스브리지 · G5)", value: "top" },
+                    { label: "랭킹과 합격 안정성의 균형", value: "balance" },
+                    { label: "빠른 학위 취득 · 기간 단축", value: "fast" }
+                ]
+            }
+        ];
+
+        // ── 플로우 ───────────────────────────────────────────────────
+        function goHome() { location.reload(); }
+
+        function activeQuestions() { return track === 'pg' ? pgQuestions : ugQuestions; }
+
+        function startConsulting(t) {
+            track = t || 'pg';
+            currentState = {}; step = 0;
+            document.getElementById('hero-section').style.display = 'none';
+            document.getElementById('result-section').style.display = 'none';
+            document.getElementById('chat-history').innerHTML = '';
+            const chatSection = document.getElementById('chat-section');
+            chatSection.style.display = 'flex';
+            chatSection.classList.add('fade-in-up');
+            const intro = track === 'pg'
+                ? '안녕하세요, 종로유학원 AI 컨설턴트입니다.<br>최신 2026-27 영국 대학 데이터를 바탕으로 <strong>석사 진학</strong> 맞춤 분석을 시작합니다.'
+                : '안녕하세요, 종로유학원 AI 컨설턴트입니다.<br>QS 2027 데이터 기반으로 <strong>영국 학부 진학(파운데이션 · IYO)</strong> 경로 분석을 시작합니다.';
+            addChatBubble('ai', intro);
+            setTimeout(askQuestion, 800);
+            window.scrollTo({ top: 0 });
+        }
+
+        function addChatBubble(sender, text) {
+            const history = document.getElementById('chat-history');
+            const wrap = document.createElement('div');
+            wrap.className = `flex ${sender === 'user' ? 'justify-end' : 'justify-start'} fade-in-up`;
+            let bubbleHTML = '';
+            if (sender === 'ai') {
+                bubbleHTML = `
+                    <div class="flex gap-3 max-w-[90%] md:max-w-[80%]">
+                        <div class="w-10 h-10 rounded-full bg-gold flex items-center justify-center text-black shrink-0">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div class="chat-bubble-ai px-5 py-3.5 text-[15px] leading-relaxed shadow-sm">${text}</div>
+                    </div>`;
+            } else {
+                bubbleHTML = `<div class="chat-bubble-user px-5 py-3.5 text-[15px] leading-relaxed shadow-sm max-w-[85%] font-medium">${text}</div>`;
+            }
+            wrap.innerHTML = bubbleHTML;
+            history.appendChild(wrap);
+            history.scrollTo({ top: history.scrollHeight, behavior: 'smooth' });
+        }
+
+        function askQuestion() {
+            const qs = activeQuestions();
+            if (step < qs.length) {
+                const q = qs[step];
+                addChatBubble('ai', q.q);
+                if (q.key === 'major' && track === 'pg') { renderMajorCategories(); return; }
+                const c = document.getElementById('options-container');
+                c.innerHTML = '';
+                q.options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = OPT_BTN_CLASS;
+                    btn.innerText = opt.label;
+                    btn.onclick = () => handleAnswer(opt.value, opt.label);
+                    c.appendChild(btn);
+                });
+                if (q.note) {
+                    const note = document.createElement('p');
+                    note.className = 'text-[13px] text-gray-500 leading-relaxed text-center sm:col-span-2 mt-1';
+                    note.innerText = q.note;
+                    c.appendChild(note);
+                }
+            } else {
+                document.getElementById('options-container').innerHTML = '';
+                addChatBubble('ai', '정보 입력이 완료되었습니다. 최신 26/27 영국 입시 데이터를 바탕으로 결과를 분석 중입니다...');
+                setTimeout(showResult, 1800);
+            }
+        }
+
+        function handleAnswer(value, label) {
+            if (value === '__other__') {
+                addChatBubble('user', label);
+                document.getElementById('options-container').innerHTML = '';
+                addChatBubble('ai', '보유하신 시험 종류를 선택해주세요. 입력하신 총점을 IELTS 밴드로 환산해 드립니다.');
+                setTimeout(renderTestTypeChoice, 500);
+                return;
+            }
+            addChatBubble('user', label);
+            document.getElementById('options-container').innerHTML = '';
+            const q = activeQuestions()[step];
+            currentState[q.key] = value;
+            step++;
+            setTimeout(askQuestion, 600);
+        }
+
+        // ── 석사: 계열 → 세부 전공 2단계 ────────────────────────────
+        function renderMajorCategories() {
+            const c = document.getElementById('options-container');
+            c.innerHTML = '';
+            Object.keys(majorCategories).forEach(cat => {
+                const b = document.createElement('button');
+                b.className = OPT_BTN_CLASS;
+                b.innerText = cat;
+                b.onclick = () => {
+                    addChatBubble('user', cat);
+                    addChatBubble('ai', `<strong>${cat}</strong>을 선택하셨네요. 이제 세부 전공을 선택해주세요.`);
+                    renderMajorList(cat);
+                };
+                c.appendChild(b);
+            });
+        }
+        function renderMajorList(cat) {
+            const c = document.getElementById('options-container');
+            c.innerHTML = '';
+            majorCategories[cat].forEach(m => {
+                const b = document.createElement('button');
+                b.className = OPT_BTN_CLASS;
+                b.innerText = m;
+                b.onclick = () => handleAnswer(m, m);
+                c.appendChild(b);
+            });
+            const back = document.createElement('button');
+            back.className = 'pill-btn bg-transparent text-gray-400 border border-[#3d3d40] hover:bg-[#2d2d2f] py-3.5 px-4 font-medium text-[14px] md:text-[15px] w-full sm:col-span-2';
+            back.innerText = '← 계열 다시 선택하기';
+            back.onclick = renderMajorCategories;
+            c.appendChild(back);
+        }
+
+        // ── 영어 점수 환산기 ─────────────────────────────────────────
+        function renderTestTypeChoice() {
+            const c = document.getElementById('options-container');
+            c.innerHTML = '';
+            [['TOEFL iBT (0~120)', 'TOEFL'], ['PTE Academic (10~90)', 'PTE']].forEach(([lbl, type]) => {
+                const b = document.createElement('button');
+                b.className = OPT_BTN_CLASS;
+                b.innerText = lbl;
+                b.onclick = () => renderScoreInput(type);
+                c.appendChild(b);
+            });
+            const back = document.createElement('button');
+            back.className = 'pill-btn bg-transparent text-gray-400 border border-[#3d3d40] hover:bg-[#2d2d2f] py-3.5 px-4 font-medium text-[14px] md:text-[15px] w-full sm:col-span-2';
+            back.innerText = '← 성적 선택으로 돌아가기';
+            back.onclick = () => {
+                c.innerHTML = '';
+                activeQuestions()[step].options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = OPT_BTN_CLASS;
+                    btn.innerText = opt.label;
+                    btn.onclick = () => handleAnswer(opt.value, opt.label);
+                    c.appendChild(btn);
+                });
+            };
+            c.appendChild(back);
+        }
+
+        function renderScoreInput(testType) {
+            const c = document.getElementById('options-container');
+            c.innerHTML = '';
+            const min = testType === 'TOEFL' ? 0 : 10;
+            const max = testType === 'TOEFL' ? 120 : 90;
+            const wrap = document.createElement('div');
+            wrap.className = 'sm:col-span-2 flex flex-col gap-3';
+            wrap.innerHTML = `
+                <input id="engScoreInput" type="number" inputmode="numeric" min="${min}" max="${max}"
+                    placeholder="${testType} 총점을 입력하세요 (${min}~${max})"
+                    class="bg-[#2d2d2f] text-white border border-[#3d3d40] rounded-2xl py-3.5 px-5 text-[15px] focus:outline-none focus:border-gold w-full placeholder-gray-500" />
+                <div class="flex gap-3">
+                    <button id="engConvertBtn" class="pill-btn bg-gold hover:bg-gold-deep text-black py-3.5 px-4 font-semibold text-[15px] flex-1">IELTS로 환산하기</button>
+                    <button id="engBackBtn" class="pill-btn bg-[#2d2d2f] text-gray-300 border border-[#3d3d40] hover:bg-[#3d3d40] py-3.5 px-5 font-medium text-[15px]">← 뒤로</button>
+                </div>`;
+            c.appendChild(wrap);
+            document.getElementById('engConvertBtn').onclick = () => convertEnglish(testType);
+            document.getElementById('engBackBtn').onclick = renderTestTypeChoice;
+            document.getElementById('engScoreInput').focus();
+        }
+
+        function convertEnglish(testType) {
+            const input = document.getElementById('engScoreInput');
+            const s = parseInt(input.value, 10);
+            const min = testType === 'TOEFL' ? 0 : 10;
+            const max = testType === 'TOEFL' ? 120 : 90;
+            if (isNaN(s) || s < min || s > max) { input.value = ''; input.placeholder = `유효한 점수를 입력하세요 (${min}~${max})`; return; }
+            const ielts = testType === 'TOEFL' ? toeflToIelts(s) : pteToIelts(s);
+            const q = activeQuestions()[step];
+            const band = q.bandOf(ielts);
+            const bandLabel = q.options.find(o => o.value === band).label;
+            addChatBubble('user', `${testType} ${s}점`);
+            addChatBubble('ai', `${testType} ${s}점은 <strong>IELTS 약 ${ielts.toFixed(1)}</strong>에 해당합니다. "${bandLabel}" 구간으로 분석을 진행할게요.`);
+            document.getElementById('options-container').innerHTML = '';
+            currentState[q.key] = band;
+            currentState.ieltsEq = ielts;
+            step++;
+            setTimeout(askQuestion, 900);
+        }
+
+        // ── 공통 결과 파츠 ───────────────────────────────────────────
+        function ctaHTML(title, sub) {
+            return `
+                <div class="section-light py-24 px-4 text-center border-t border-gray-200">
+                    <div class="max-w-3xl mx-auto">
+                        <h2 class="text-4xl font-bold tracking-tighter2 mb-6 text-black">${title}</h2>
+                        <p class="text-lg text-gray-600 mb-10 leading-relaxed">${sub}</p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <a href="${CONSULT_URL}" target="_blank" rel="noopener" class="pill-btn bg-gold hover:bg-gold-deep text-black px-8 py-4 text-lg font-semibold w-full sm:w-auto shadow-lg shadow-yellow-500/30 transition-all transform hover:-translate-y-1">종로유학원 무료 상담 예약</a>
+                            <button onclick="goHome()" class="pill-btn bg-white border border-gray-300 text-ink2 hover:bg-gray-50 px-8 py-4 text-lg font-medium w-full sm:w-auto">다시 진단하기</button>
+                        </div>
+                    </div>
+                </div>`;
+        }
+
+        function youtubeHTML() {
+            return `
+                <div class="section-dark py-24 px-4 border-t border-gray-800">
+                    <div class="max-w-3xl mx-auto text-center">
+                        <span class="inline-block py-1 px-3 border border-gray-600 rounded-full text-xs font-semibold tracking-widest text-gray-300 mb-6 uppercase">Video Guide</span>
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4">영상으로 미리 보는 영국 유학</h2>
+                        <p class="text-gray-400 font-light mb-10 text-lg">지원 절차부터 현지 생활까지 — 종로유학원 공식 유튜브에서 전문가 가이드를 확인하세요.</p>
+                        <a href="${YT_URL}" target="_blank" rel="noopener" class="pill-btn bg-[#1d1d1f] border border-[#3d3d40] hover:border-gold hover:text-gold text-white px-8 py-4 text-lg font-medium inline-flex items-center gap-3">
+                            <i class="fa-brands fa-youtube text-red-500 text-xl"></i> 종로유학원 유튜브 바로가기
+                        </a>
+                    </div>
+                </div>`;
+        }
+
+        function footerHTML() {
+            return `
+                <footer class="bg-[#0b0b0c] py-12 text-center border-t border-gray-900">
+                    <img src="assets/logo.png" alt="종로유학원" class="h-6 mx-auto mb-5 opacity-90">
+                    <p class="text-xs text-gray-500 font-medium mb-2">ⓒ 종로유학원. All rights reserved.</p>
+                    <p class="text-[11px] text-gray-600 leading-relaxed max-w-xl mx-auto px-4">본 페이지의 대학 순위는 QS World University Rankings 2027(2026년 6월 발표), 과정·요건 정보는 각 대학 및 운영 기관 공시 기준이며 학기마다 변동될 수 있습니다. 최종 지원 전 반드시 상담을 통해 최신 요강을 확인하세요.</p>
+                </footer>`;
+        }
+
+
+        // ── 결과 디스패처 ────────────────────────────────────────────
+        function showResult() { track === 'pg' ? showPgResult() : showUgResult(); }
+
+        // ── 석사 결과 ────────────────────────────────────────────────
+        function showPgResult() {
+            document.getElementById('chat-section').style.display = 'none';
+            const resultSection = document.getElementById('result-section');
+            resultSection.style.display = 'block';
+            resultSection.classList.add('fade-in-up');
+
+            let isPreMaster = false;
+            let pathwayReason = "";
+            if (currentState.gpa.includes("3.0 미만") || currentState.gpa.includes("3.0~3.4")) {
+                isPreMaster = true;
+                pathwayReason = "학점(GPA) 보완이 필요하며, ";
+            }
+            if (currentState.sameMajor === "비전공자") {
+                isPreMaster = true;
+                pathwayReason += "학부와 석사 전공이 상이하여 기초 선수과목 이수가 강력히 권장됩니다. (단, 비즈니스/마케팅, 심리학 Conversion 과정 등 일부 전공은 Direct 지원이 예외적으로 가능할 수 있습니다).";
+            }
+            const pathwayTitle = isPreMaster ? "Pre-Master (석사 예비과정)" : "Direct (석사 직행 과정)";
+            const pathwaySub = isPreMaster
+                ? "성적 및 전공의 차이를 극복하고 명문대 진학을 보장받는 가장 확실한 루트입니다."
+                : "우수한 성적과 전공 적합성을 바탕으로 1년 만에 석사 학위를 취득하는 효율적인 루트입니다.";
+            const majorInfo = majorData[currentState.major];
+
+            const extraDocs = [];
+            if (currentState.sameMajor === '비전공자') {
+                extraDocs.push('<strong>전공 전환 사유를 담은 학업계획서(SOP)</strong> — 왜 이 분야로 바꾸는지 설득력 있는 스토리가 합격을 좌우합니다.');
+                extraDocs.push('학부 수강과목 상세 내역 (지원 전공과의 연관 과목 증빙용)');
+            }
+            if (isPreMaster) {
+                extraDocs.push('<strong>프리마스터 · 프리세셔널 조건부 입학 서류</strong> — 영어 점수가 아직 부족해도 사전 등록(조건부 오퍼)이 가능합니다.');
+                extraDocs.push('졸업 전이라면 재학증명서 + 성적증명서 (졸업예정증명 포함)');
+            } else {
+                extraDocs.push('<strong>차별화된 학업계획서(SOP) · 영문 이력서(CV)</strong> — Direct 합격의 핵심 평가 요소이므로 완성도가 중요합니다.');
+            }
+            if (/미디어|저널리즘|박물관/.test(currentState.major)) extraDocs.push('포트폴리오 또는 글쓰기 샘플 (미디어 · 저널리즘 계열 필수)');
+            if (/비즈니스|마케팅|경영/.test(currentState.major)) extraDocs.push('MBA 등 일부 경영 과정 지원 시 경력증명서 (요구되는 경우)');
+            if (extraDocs.length === 0) extraDocs.push('전공별 세부 요구 서류는 학교 · 과정마다 다르므로, 무료 상담 시 정확히 안내해 드립니다.');
+
+            let html = `
+                <div class="section-dark pt-24 pb-16 px-4">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <span class="inline-block py-1 px-3 border border-gray-600 rounded-full text-xs font-semibold tracking-widest text-gray-300 mb-6 uppercase">AI Analysis Complete</span>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter2 mb-6 leading-tight">
+                            당신을 위한 최적의 진학 경로는<br><span class="text-gold">"${pathwayTitle}"</span> 입니다.
+                        </h2>
+                        <p class="text-lg text-gray-400 max-w-2xl mx-auto font-light leading-relaxed mb-6">${pathwaySub}</p>
+                        <div class="bg-[#1d1d1f] rounded-2xl p-6 text-left border border-[#2d2d2f] max-w-2xl mx-auto mb-8">
+                            <p class="text-sm text-gray-300 leading-relaxed"><strong class="text-white">진단 사유:</strong> ${isPreMaster
+                                ? pathwayReason + '<br><br>프리마스터를 이수할 경우, 아카데믹 영어 실력 향상은 물론 논문 작성법(Research Skill)을 미리 익힐 수 있어 본 과정 진학 후 우수한 성적을 거두는 데 매우 유리합니다.'
+                                : '지원 전공에 대한 높은 적합성과 양호한 성적을 보유하고 있습니다. 학업계획서(SOP)와 이력서(CV)에 본인만의 스토리를 전략적으로 담아 명문대 Direct 입학을 정조준합니다.'}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-light py-20 px-4">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="text-center mb-16">
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">전공 분석 및 추천 대학</h3>
+                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">선택하신 <strong class="text-ink2">${currentState.major}</strong> 전공은 ${majorInfo.desc}</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                            ${majorInfo.schools.map(school => `
+                                <div class="apple-card p-8 md:p-10 flex flex-col h-full">
+                                    <h4 class="text-2xl font-bold text-black tracking-tight mb-1">${school.name}</h4>
+                                    <p class="text-royal font-semibold mb-4 text-sm">${school.course}</p>
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <div class="info-badge"><i class="fa-solid fa-trophy text-yellow-500 mr-2 text-xs"></i> ${school.rank}</div>
+                                        <div class="info-badge"><i class="fa-solid fa-location-dot text-gray-400 mr-2 text-xs"></i> ${school.location}</div>
+                                        <div class="info-badge"><i class="fa-solid fa-sterling-sign text-gray-400 mr-2 text-xs"></i> 26/27학비: ${school.tuition}</div>
+                                    </div>
+                                    <p class="text-[15px] text-gray-600 leading-relaxed mb-8 flex-grow">${school.desc}</p>
+                                    <div class="flex flex-col gap-2.5">
+                                        <a href="${CONSULT_URL}" target="_blank" rel="noopener" class="consult-banner text-center font-semibold py-3.5 px-4 w-full flex items-center justify-center gap-2 text-[15px]">
+                                            <i class="fa-solid fa-comments text-xs"></i> 이 대학, 종로유학원 상담 신청
+                                        </a>
+                                        <a href="${school.link}" target="_blank" rel="noopener" class="uni-link-banner text-center font-semibold py-3.5 px-4 w-full flex items-center justify-center gap-2 text-[15px]">
+                                            대학 공식 페이지 보기 <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-70"></i>
+                                        </a>
+                                    </div>
+                                </div>`).join('')}
+                        </div>
+                    </div>
+                </div>
+
+                ${youtubeHTML()}
+
+                <div class="section-light py-24 px-4 border-t border-gray-200">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">지원 서류 & 타이밍 가이드</h3>
+                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">영국 석사는 <strong class="text-ink2">자격 · 서류 · 타이밍</strong> 세 가지가 합격을 좌우합니다.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                            <div class="apple-card p-8 md:p-10 flex flex-col h-full">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-royal mb-5 text-xl"><i class="fa-solid fa-folder-open"></i></div>
+                                <h4 class="text-xl font-bold text-black tracking-tight mb-1">공통 필수 서류</h4>
+                                <p class="text-mute text-sm mb-6">모든 영국 석사 지원자가 기본으로 준비해야 하는 서류입니다.</p>
+                                <ul class="space-y-3.5 text-[15px] text-gray-700 leading-relaxed">
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span><strong>영문 성적증명서</strong> (Academic Transcript)</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span><strong>영문 학위 · 졸업(예정)증명서</strong> (Degree Certificate)</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span><strong>학업계획서 · 자기소개서</strong> (Personal Statement · SOP)</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span><strong>추천서</strong> (Reference Letter) 1~2부</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span><strong>영문 이력서</strong> (CV / Resume)</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span><strong>여권 사본</strong> (Passport)</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span><strong>공인 영어성적</strong> (IELTS 등) — <span class="text-mute">미보유 시 조건부 입학 후 추후 제출 가능</span></span></li>
+                                </ul>
+                            </div>
+                            <div class="apple-card p-8 md:p-10 flex flex-col h-full">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-royal mb-5 text-xl"><i class="fa-solid fa-user-check"></i></div>
+                                <h4 class="text-xl font-bold text-black tracking-tight mb-1">${currentState.major.split(' / ')[0]} · ${pathwayTitle.split(' ')[0]} 맞춤 추가 서류</h4>
+                                <p class="text-mute text-sm mb-6">진단 결과와 선택하신 전공을 반영한, 학생분께 특히 중요한 서류입니다.</p>
+                                <ul class="space-y-3.5 text-[15px] text-gray-700 leading-relaxed">
+                                    ${extraDocs.map(d => `<li class="flex gap-3"><i class="fa-solid fa-star text-yellow-500 mt-1 text-sm shrink-0"></i><span>${d}</span></li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-8 apple-card p-8 md:p-10 flex flex-col sm:flex-row gap-6 items-start">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-royal text-xl shrink-0"><i class="fa-solid fa-clock"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold text-black tracking-tight mb-2">지원 타이밍 — 빠를수록 유리합니다</h4>
+                                <p class="text-[15px] text-gray-700 leading-relaxed">영국 대학은 <strong>롤링 어드미션(Rolling Admission)</strong> 방식으로, 정원이 차는 순서대로 마감됩니다. 통상 <strong>입학 1년 전(전년도 9~10월)</strong> 원서가 열리며, 인기 과정은 조기 마감되므로 <strong>가능한 한 빨리 지원할수록 합격과 장학금에 유리</strong>합니다. 서류 준비에는 최소 1~2개월이 걸리는 만큼, 지금부터 준비를 시작하는 것을 권장합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                ${ctaHTML('완벽한 준비는 전문가와 함께.', '위 결과는 2026-27 데이터에 기반한 1차 진단입니다.<br class="hidden sm:block">실제 합격 가능성을 높이는 세부 입시 요강 분석과 전략은 무료 상담을 통해 확인하세요.')}
+                ${footerHTML()}
+            `;
+            resultSection.innerHTML = html;
+            window.scrollTo({ top: 0 });
+        }
+
+        // ── 학부 결과 ────────────────────────────────────────────────
+        const GRP_LABEL = { direct: '직접 지원', own: '자체 파운데이션', kaplan: 'Kaplan 제휴', sg: 'Study Group 제휴', into: 'INTO 제휴' };
+        let ugFilter = 'all';
+
+        function ugRouteDecision(s) {
+            const canIyo = ['hs3', 'grad', 'intl'].includes(s.status) && s.grades !== 'etc';
+            let key, title, sub, reason;
+            const fieldNote = ['biz', 'eng', 'cs'].includes(s.field)
+                ? 'IYO 개설이 가장 활발한 계열(경영 · 공학 · 컴퓨팅)을 희망하고 계셔서 2학년 편입 선택지가 넓은 편입니다.'
+                : '선택하신 계열은 IYO 개설 대학이 제한적이라, 전공 선택 폭이 넓은 파운데이션 경로가 유리할 수 있습니다.';
+            if (!canIyo) {
+                key = 'fnd'; title = '파운데이션 (Foundation)';
+                sub = '고2 수료 후 바로 지원할 수 있는 영국 학부 진학의 표준 루트입니다.';
+                reason = s.status === 'hs2'
+                    ? '고2 수료 예정 단계에서는 파운데이션이 유일하면서도 가장 빠른 경로입니다 — 또래가 고3을 보내는 1년 동안 영국에서 파운데이션을 이수하고, 남들보다 빨리 학사 1학년에 진입할 수 있습니다.'
+                    : '내신 산출이 어려운 경우에도 파운데이션은 자체 평가 기준(인터뷰 · 내부 시험 등)으로 입학이 가능해 실질적인 진입 문이 가장 넓습니다.';
+            } else if (s.target === 'fast') {
+                key = 'iyo'; title = 'IYO (International Year One)';
+                sub = '1년 과정 수료 후 학사 2학년으로 편입 — 총 유학 기간을 1년 단축하는 루트입니다.';
+                reason = '고교 졸업(예정) 자격과 내신을 갖추고 계셔서 IYO 지원이 가능하며, 빠른 학위 취득을 원하시는 목표와 가장 잘 맞습니다. ' + fieldNote;
+            } else if (s.target === 'top') {
+                key = 'fnd'; title = '파운데이션 중심 + 직접 지원 병행';
+                sub = '최상위권(옥스브리지 · 임페리얼 · LSE)은 IYO가 없어, 자체 파운데이션과 직접 지원을 함께 설계합니다.';
+                reason = '목표하시는 최상위권 대학은 파운데이션조차 자체 운영(UCL UPC, 워릭 IFP 등)이거나 아예 직접 지원만 받습니다. 상위권 자체 파운데이션을 축으로 하되, 성적에 따라 A-level 직접 지원 병행 여부를 상담에서 설계합니다.';
+            } else {
+                key = 'both'; title = '파운데이션 · IYO 병행 전략';
+                sub = '두 경로 모두 지원 자격이 되어, 대학별로 유리한 쪽을 골라 지원하는 전략이 가능합니다.';
+                reason = '졸업(예정) 자격과 내신을 갖추고 계셔서 파운데이션(전공 폭 넓음)과 IYO(기간 단축)를 대학별로 조합할 수 있는 유리한 위치입니다. ' + fieldNote;
+            }
+            if (s.english === 'none') reason += ' 공인 영어 성적은 아직 없어도 IELTS(UKVI) 목표 점수와 준비 일정까지 상담에서 함께 설계해 드립니다.';
+            return { key, title, sub, canIyo };
+            }
+
+        function ugRouteReason(s) {
+            // ugRouteDecision과 동일 분기에서 reason만 반환 (렌더 편의용)
+            const canIyo = ['hs3', 'grad', 'intl'].includes(s.status) && s.grades !== 'etc';
+            const fieldNote = ['biz', 'eng', 'cs'].includes(s.field)
+                ? 'IYO 개설이 가장 활발한 계열(경영 · 공학 · 컴퓨팅)을 희망하고 계셔서 2학년 편입 선택지가 넓은 편입니다.'
+                : '선택하신 계열은 IYO 개설 대학이 제한적이라, 전공 선택 폭이 넓은 파운데이션 경로가 유리할 수 있습니다.';
+            let reason;
+            if (!canIyo) {
+                reason = s.status === 'hs2'
+                    ? '고2 수료 예정 단계에서는 파운데이션이 유일하면서도 가장 빠른 경로입니다 — 또래가 고3을 보내는 1년 동안 영국에서 파운데이션을 이수하고, 남들보다 빨리 학사 1학년에 진입할 수 있습니다.'
+                    : '내신 산출이 어려운 경우에도 파운데이션은 자체 평가 기준(인터뷰 · 내부 시험 등)으로 입학이 가능해 실질적인 진입 문이 가장 넓습니다.';
+            } else if (s.target === 'fast') {
+                reason = '고교 졸업(예정) 자격과 내신을 갖추고 계셔서 IYO 지원이 가능하며, 빠른 학위 취득을 원하시는 목표와 가장 잘 맞습니다. ' + fieldNote;
+            } else if (s.target === 'top') {
+                reason = '목표하시는 최상위권 대학은 파운데이션조차 자체 운영(UCL UPC, 워릭 IFP 등)이거나 아예 직접 지원만 받습니다. 상위권 자체 파운데이션을 축으로 하되, 성적에 따라 A-level 직접 지원 병행 여부를 상담에서 설계합니다.';
+            } else {
+                reason = '졸업(예정) 자격과 내신을 갖추고 계셔서 파운데이션(전공 폭 넓음)과 IYO(기간 단축)를 대학별로 조합할 수 있는 유리한 위치입니다. ' + fieldNote;
+            }
+            if (s.english === 'none') reason += ' 공인 영어 성적은 아직 없어도 IELTS(UKVI) 목표 점수와 준비 일정까지 상담에서 함께 설계해 드립니다.';
+            return reason;
+        }
+
+        function ugCardHTML(u) {
+            const badges = [];
+            badges.push(`<div class="info-badge"><i class="fa-solid fa-trophy text-yellow-500 mr-2 text-xs"></i> QS 2027 세계 ${u.qs}위</div>`);
+            badges.push(`<div class="info-badge"><i class="fa-solid fa-location-dot text-gray-400 mr-2 text-xs"></i> ${u.city}</div>`);
+            const routes = [];
+            if (u.grp === 'direct') routes.push(`<span class="route-badge bg-gray-100 text-gray-600"><i class="fa-solid fa-arrow-right text-[10px]"></i> 직접 지원</span>`);
+            if (u.fnd) routes.push(`<span class="route-badge bg-blue-50 text-royal"><i class="fa-solid fa-layer-group text-[10px]"></i> ${u.fnd}</span>`);
+            if (u.iyo) routes.push(`<span class="route-badge bg-[#EAFFD0] text-[#3c6b00]"><i class="fa-solid fa-forward text-[10px]"></i> IYO · 2학년 편입</span>`);
+            return `
+                <div class="apple-card p-7 md:p-8 flex flex-col h-full">
+                    <h4 class="text-xl font-bold text-black tracking-tight leading-snug">${u.n}</h4>
+                    <p class="text-mute text-[13px] font-medium mb-4">${u.k}</p>
+                    <div class="flex flex-wrap gap-2 mb-3">${badges.join('')}</div>
+                    <div class="flex flex-wrap gap-2 mb-5">${routes.join('')}</div>
+                    <p class="text-[14px] text-gray-600 leading-relaxed mb-7 flex-grow">${u.note}</p>
+                    <div class="flex gap-2.5">
+                        <a href="${CONSULT_URL}" target="_blank" rel="noopener" class="consult-banner text-center font-semibold py-3 px-3 flex-1 flex items-center justify-center gap-2 text-[14px]"><i class="fa-solid fa-comments text-xs"></i> 상담 신청</a>
+                        <a href="${u.url}" target="_blank" rel="noopener" class="uni-link-banner text-center font-semibold py-3 px-3 flex-1 flex items-center justify-center gap-2 text-[14px]">공식 페이지 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-70"></i></a>
+                    </div>
+                </div>`;
+        }
+
+        function renderUgCards(filter) {
+            ugFilter = filter;
+            document.querySelectorAll('.filter-chip').forEach(ch => ch.classList.toggle('active', ch.dataset.f === filter));
+            const list = UG_UNIS
+                .filter(u => filter === 'all' ? true : filter === 'iyo' ? u.iyo : filter === 'fnd' ? !!u.fnd : u.grp === 'direct')
+                .sort((a, b) => a.qs - b.qs);
+            document.getElementById('ug-cards').innerHTML = list.map(ugCardHTML).join('');
+            document.getElementById('ug-count').innerText = `${list.length}개교`;
+        }
+
+        function showUgResult() {
+            document.getElementById('chat-section').style.display = 'none';
+            const resultSection = document.getElementById('result-section');
+            resultSection.style.display = 'block';
+            resultSection.classList.add('fade-in-up');
+
+            const d = ugRouteDecision(currentState);
+            const reason = ugRouteReason(currentState);
+            const rec = d.key; // 'fnd' | 'iyo' | 'both'
+            const ring = k => (rec === k || rec === 'both' && (k === 'fnd' || k === 'iyo')) ? 'ring-2 ring-gold' : '';
+            const recChip = k => (rec === k || rec === 'both' && (k === 'fnd' || k === 'iyo')) ? '<span class="route-badge bg-gold text-black mb-4">추천 경로</span>' : '<span class="route-badge bg-gray-100 text-gray-500 mb-4">경로 안내</span>';
+
+            let html = `
+                <div class="section-dark pt-24 pb-16 px-4">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <span class="inline-block py-1 px-3 border border-gray-600 rounded-full text-xs font-semibold tracking-widest text-gray-300 mb-6 uppercase">AI Analysis Complete · Undergraduate</span>
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter2 mb-6 leading-tight">
+                            당신을 위한 학부 진학 경로는<br><span class="text-gold">"${d.title}"</span> 입니다.
+                        </h2>
+                        <p class="text-lg text-gray-400 max-w-2xl mx-auto font-light leading-relaxed mb-6">${d.sub}</p>
+                        <div class="bg-[#1d1d1f] rounded-2xl p-6 text-left border border-[#2d2d2f] max-w-2xl mx-auto mb-8">
+                            <p class="text-sm text-gray-300 leading-relaxed"><strong class="text-white">진단 사유:</strong> ${reason}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-light py-20 px-4">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="text-center mb-14">
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">영국 학부, 3가지 진입 경로</h3>
+                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">한국 고교 과정은 영국 13년제(A-level)와 달라, 대부분 아래 준비 과정을 거쳐 학사에 진입합니다.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="apple-card p-8 flex flex-col ${ring('fnd')}">
+                                ${recChip('fnd')}
+                                <h4 class="text-xl font-bold text-black mb-1">파운데이션</h4>
+                                <p class="text-royal text-sm font-semibold mb-4">1년 수료 → 학사 1학년 입학</p>
+                                <ul class="space-y-2.5 text-[14px] text-gray-700 leading-relaxed">
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>고2 수료 후 지원 가능 — 가장 빠른 시작</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>통상 내신 + IELTS(UKVI) 4.5 ~ 5.5 수준</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>전공 선택 폭이 가장 넓음 (인문 ~ 이공 전반)</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>수료 성적 충족 시 연계 대학 진학 보장형 다수</li>
+                                </ul>
+                            </div>
+                            <div class="apple-card p-8 flex flex-col ${ring('iyo')}">
+                                ${recChip('iyo')}
+                                <h4 class="text-xl font-bold text-black mb-1">IYO</h4>
+                                <p class="text-royal text-sm font-semibold mb-4">1년 수료 → 학사 2학년 편입</p>
+                                <ul class="space-y-2.5 text-[14px] text-gray-700 leading-relaxed">
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>고교 졸업(예정) + 내신 요건 필요</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>통상 IELTS(UKVI) 5.5 ~ 6.0 수준</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>경영 · 공학 · 컴퓨팅 중심 개설</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>총 유학 기간 1년 단축 = 학비 · 생활비 절감</li>
+                                </ul>
+                            </div>
+                            <div class="apple-card p-8 flex flex-col ${ring('direct')}">
+                                ${recChip('direct')}
+                                <h4 class="text-xl font-bold text-black mb-1">직접 지원</h4>
+                                <p class="text-royal text-sm font-semibold mb-4">A-level · IB → 학사 1학년</p>
+                                <ul class="space-y-2.5 text-[14px] text-gray-700 leading-relaxed">
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>해외고 · 국제학교 출신에게 열린 경로</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>옥스브리지 · 임페리얼 · LSE는 이 경로만 운영</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>UCAS를 통한 지원 · 최대 5개교</li>
+                                    <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>IELTS 6.5 ~ 7.0+ 등 높은 요건</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="text-center text-[13px] text-mute mt-8">파운데이션 · IYO 학비는 기관과 전공에 따라 대략 <strong class="text-ink2">연 £20,000 ~ £30,000</strong> 수준이며 매년 변동됩니다. 정확한 금액은 상담 시 최신 요강으로 확인해 드립니다.</p>
+                    </div>
+                </div>
+
+                <div class="section-light py-20 px-4 border-t border-gray-200">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="text-center mb-10">
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">영국 대학 22개교 진입 경로 한눈에</h3>
+                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">QS 세계대학랭킹 2027 기준 — 대학별 파운데이션 운영 기관과 IYO 가능 여부를 확인하세요.</p>
+                        </div>
+                        <div class="flex flex-wrap items-center justify-center gap-2.5 mb-4">
+                            <button class="filter-chip active" data-f="all" onclick="renderUgCards('all')">전체</button>
+                            <button class="filter-chip" data-f="iyo" onclick="renderUgCards('iyo')">IYO 운영</button>
+                            <button class="filter-chip" data-f="fnd" onclick="renderUgCards('fnd')">파운데이션 운영</button>
+                            <button class="filter-chip" data-f="direct" onclick="renderUgCards('direct')">직접 지원</button>
+                        </div>
+                        <p class="text-center text-[13px] text-mute mb-10"><span id="ug-count"></span> 표시 중 · 과정 개설 전공과 요건은 학기마다 변동될 수 있습니다</p>
+                        <div id="ug-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                    </div>
+                </div>
+
+                <div class="section-light py-24 px-4 border-t border-gray-200">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="text-center mb-12">
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">학부 지원 준비 가이드</h3>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                            <div class="apple-card p-8 md:p-10 flex flex-col h-full">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-royal mb-5 text-xl"><i class="fa-solid fa-folder-open"></i></div>
+                                <h4 class="text-xl font-bold text-black tracking-tight mb-1">기본 준비 서류</h4>
+                                <p class="text-mute text-sm mb-6">파운데이션 · IYO 지원의 공통 기본 서류입니다.</p>
+                                <ul class="space-y-3.5 text-[15px] text-gray-700 leading-relaxed">
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span><strong>영문 고교 성적증명서</strong> (검정고시는 성적증명으로 대체)</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span><strong>영문 재학 · 졸업(예정)증명서</strong></span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span><strong>여권 사본</strong></span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span><strong>IELTS for UKVI</strong> — <span class="text-mute">미보유 시 조건부 오퍼 후 제출 가능</span></span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-circle-check text-royal mt-1 text-sm shrink-0"></i><span><strong>간단한 자기소개 · 학업 계획</strong> (기관별 요구 시)</span></li>
+                                </ul>
+                            </div>
+                            <div class="apple-card p-8 md:p-10 flex flex-col h-full">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-royal mb-5 text-xl"><i class="fa-solid fa-clock"></i></div>
+                                <h4 class="text-xl font-bold text-black tracking-tight mb-1">지원 타이밍</h4>
+                                <p class="text-mute text-sm mb-6">파운데이션 · IYO는 대학 본과와 입학 시점 구조가 다릅니다.</p>
+                                <ul class="space-y-3.5 text-[15px] text-gray-700 leading-relaxed">
+                                    <li class="flex gap-3"><i class="fa-solid fa-star text-yellow-500 mt-1 text-sm shrink-0"></i><span>주요 기관은 <strong>9월 외에 1월 · 4월 등 복수 입학 시점</strong>을 운영해 학기 중 합류도 가능합니다.</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-star text-yellow-500 mt-1 text-sm shrink-0"></i><span>인기 대학 연계 과정은 <strong>정원 마감이 빠르므로 6개월 ~ 1년 전 지원</strong>을 권장합니다.</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-star text-yellow-500 mt-1 text-sm shrink-0"></i><span>비자(학생비자) 수속에 통상 <strong>1 ~ 2개월</strong>이 소요되므로 역산해 준비합니다.</span></li>
+                                    <li class="flex gap-3"><i class="fa-solid fa-star text-yellow-500 mt-1 text-sm shrink-0"></i><span>고2 재학생은 <strong>수료 직후 9월 입학</strong>을 목표로 지금부터 설계하는 것이 이상적입니다.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                ${youtubeHTML()}
+                ${ctaHTML('내 성적으로 어디까지 가능할까?', '위 결과는 QS 2027 데이터 기반의 1차 진단입니다.<br class="hidden sm:block">대학 · 기관별 최신 요강과 합격 전략은 종로유학원 무료 상담에서 정확히 확인하세요.')}
+                ${footerHTML()}
+            `;
+            resultSection.innerHTML = html;
+            renderUgCards('all');
+            window.scrollTo({ top: 0 });
+        }
+
+    </script>
+</body>
+</html>

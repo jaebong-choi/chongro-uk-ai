@@ -209,7 +209,7 @@ const majorCategories = {
                         location: "리즈 (Leeds, 잉글랜드 북부)",
                         tuition: "약 £28,000 ~ £30,000",
                         desc: "Leeds University Business School의 대표 인기 과정으로, 광고 기획과 마케팅 전략을 균형 있게 다루며 실무 포트폴리오 중심 커리큘럼을 운영합니다.",
-                        link: "https://www.leeds.ac.uk/masters-courses" }
+                        link: "https://courses.leeds.ac.uk/" }
                 ]
             },
             "회계 / 재무": {
@@ -377,7 +377,7 @@ const majorCategories = {
                         location: "리즈 (Leeds, 잉글랜드 북부)",
                         tuition: "약 £29,000 ~ £31,000",
                         desc: "영국 최대 규모 공과대학 중 하나로, 구조공학·환경토목 분야의 산업체 연계 프로젝트와 JBM 공인 커리큘럼을 운영합니다.",
-                        link: "https://www.leeds.ac.uk/masters-courses" }
+                        link: "https://courses.leeds.ac.uk/" }
                 ]
             },
             "전기 / 전자공학": {
@@ -461,7 +461,7 @@ const majorCategories = {
                         location: "리즈 (Leeds, 잉글랜드 북부)",
                         tuition: "약 £26,000 ~ £28,000",
                         desc: "법학(LLM) 분야에서 영국 상위권에 위치하며, 다양한 모듈 선택권을 통해 학생 맞춤형 커리큘럼을 제공합니다.",
-                        link: "https://www.leeds.ac.uk/masters-courses" }
+                        link: "https://courses.leeds.ac.uk/" }
                 ]
             },
             "TESOL / 교육학": {
@@ -482,7 +482,7 @@ const majorCategories = {
                         location: "리즈 (Leeds, 잉글랜드 북부)",
                         tuition: "약 £26,000 ~ £28,000",
                         desc: "교육학 및 영어교육(TESOL) 분야에서 영국 상위권에 위치하며, 다양한 모듈 선택권을 통해 학생 맞춤형 커리큘럼을 제공합니다.",
-                        link: "https://www.leeds.ac.uk/masters-courses" }
+                        link: "https://courses.leeds.ac.uk/" }
                 ]
             },
             "박물관학 / 예술경영": {
@@ -636,13 +636,32 @@ const majorCategories = {
             { n:"University of Glasgow", k:"글래스고대학교", qs:80, city:"글래스고", grp:"kaplan", fnd:"GIC — Kaplan 제휴", iyo:false, url:"https://www.gla.ac.uk/undergraduate/", note:"Kaplan 제휴 GIC 파운데이션 경유 — 스코틀랜드 명문 특유의 폭넓은 전공 선택이 강점입니다." },
             { n:"University of Sheffield", k:"셰필드대학교", qs:82, city:"셰필드", grp:"sg", fnd:"USIC — Study Group 제휴", iyo:true, url:"https://www.sheffield.ac.uk/undergraduate", note:"USIC에서 파운데이션·IYO 모두 운영 — 공학 계열 진입 경로가 탄탄합니다." },
             { n:"Durham University", k:"더럼대학교", qs:85, city:"더럼", grp:"sg", fnd:"Durham ISC — Study Group 제휴", iyo:false, url:"https://www.durham.ac.uk/study/undergraduate/", note:"영국 전통 명문 — ISC 파운데이션 경유 진학이 기본이며, IYO 개설 여부는 학기별로 달라 상담 시 확인합니다." },
-            { n:"University of Nottingham", k:"노팅엄대학교", qs:97, city:"노팅엄", grp:"kaplan", fnd:"UNIC — Kaplan 제휴", iyo:true, url:"https://www.nottingham.ac.uk/studywithus/undergraduate/", note:"UNIC에서 파운데이션과 IYO를 모두 운영 — 비즈니스·공학 2학년 편입 경로가 열려 있습니다." },
+            { n:"University of Nottingham", k:"노팅엄대학교", qs:97, city:"노팅엄", grp:"kaplan", fnd:"UNIC — Kaplan 제휴", iyo:true, url:"https://www.nottingham.ac.uk/ugstudy/", note:"UNIC에서 파운데이션과 IYO를 모두 운영 — 비즈니스·공학 2학년 편입 경로가 열려 있습니다." },
             { n:"University of Southampton", k:"사우샘프턴대학교", qs:111, city:"사우샘프턴", grp:"own", fnd:"자체 국제 파운데이션", iyo:false, url:"https://www.southampton.ac.uk/study/undergraduate", note:"공학·컴퓨터 강세의 러셀그룹 — 자체 파운데이션으로 이공 계열 진입이 안정적입니다." },
-            { n:"University of St Andrews", k:"세인트앤드루스대학교", qs:115, city:"세인트앤드루스", grp:"own", fnd:"자체 International Foundation", iyo:false, url:"https://www.st-andrews.ac.uk/subjects/study-options/pathway/international-foundation/", note:"영국 국내 평가 1~2위권 스코틀랜드 최고(最古) 명문 — 자체 파운데이션으로 진입합니다." },
-            { n:"University of Bath", k:"바스대학교", qs:125, city:"바스", grp:"direct", fnd:null, iyo:false, url:"https://www.bath.ac.uk/campaigns/undergraduate-courses/", note:"경영·건축 강세 명문 — 대형 국제 파운데이션이 없어 직접 지원 또는 타 기관 파운데이션 수료 후 지원합니다." },
+            { n:"University of St Andrews", k:"세인트앤드루스대학교", qs:115, city:"세인트앤드루스", grp:"own", fnd:"자체 International Foundation", iyo:false, url:"https://www.st-andrews.ac.uk/study/ug/", note:"영국 국내 평가 1~2위권 스코틀랜드 최고(最古) 명문 — 자체 파운데이션으로 진입합니다." },
+            { n:"University of Bath", k:"바스대학교", qs:125, city:"바스", grp:"direct", fnd:null, iyo:false, url:"https://www.bath.ac.uk/courses/", note:"경영·건축 강세 명문 — 대형 국제 파운데이션이 없어 직접 지원 또는 타 기관 파운데이션 수료 후 지원합니다." },
             { n:"University of Exeter", k:"엑서터대학교", qs:136, city:"엑서터", grp:"into", fnd:"INTO Exeter (캠퍼스 내)", iyo:true, url:"https://www.exeter.ac.uk/study/undergraduate/", note:"캠퍼스 내 INTO 센터에서 파운데이션·IYO 모두 운영 — 올해 QS 19계단 상승한 러셀그룹입니다." },
             { n:"Newcastle University", k:"뉴캐슬대학교", qs:149, city:"뉴캐슬", grp:"into", fnd:"INTO Newcastle (캠퍼스 내)", iyo:true, url:"https://www.ncl.ac.uk/undergraduate/", note:"캠퍼스 내 INTO 센터에서 파운데이션·IYO(iCAS) 모두 운영 — 학생 도시 물가가 합리적입니다." },
             { n:"Lancaster University", k:"랭커스터대학교", qs:164, city:"랭커스터", grp:"into", fnd:"Lancaster ISC — INTO 제휴", iyo:false, url:"https://www.lancaster.ac.uk/study/undergraduate/", note:"영국 국내 평가 Top 15 단골 명문 — ISC 파운데이션 경유, 세부 과정 개설은 상담 시 최신 확인합니다." }
+        ];
+
+        // ── 계열별 추천 전공(학부) ──────────────────────────────────
+        const fieldMajors = {
+            biz:  { label:'경영 · 경제 · 금융', majors:['경영학 (Business Management)','경제학 (Economics)','회계 · 재무 (Accounting & Finance)','국제경영 (International Business)','마케팅 (Marketing)'] },
+            eng:  { label:'공학', majors:['기계공학 (Mechanical Eng.)','전기 · 전자공학 (Electrical & Electronic Eng.)','토목공학 (Civil Eng.)','항공우주공학 (Aerospace Eng.)','화학공학 (Chemical Eng.)'] },
+            cs:   { label:'컴퓨터 · 데이터 · AI', majors:['컴퓨터과학 (Computer Science)','인공지능 (Artificial Intelligence)','데이터사이언스 (Data Science)','소프트웨어공학 (Software Eng.)','사이버보안 (Cyber Security)'] },
+            soc:  { label:'사회과학 · 미디어 · 국제관계', majors:['국제관계학 (International Relations)','정치학 (Politics)','미디어 · 커뮤니케이션 (Media & Communication)','사회학 (Sociology)','심리학 (Psychology)'] },
+            sci:  { label:'자연과학 · 수학', majors:['수학 (Mathematics)','물리학 (Physics)','화학 (Chemistry)','생명과학 (Biological Sciences)','통계학 (Statistics)'] },
+            arts: { label:'인문 · 어학 · 예술', majors:['영문학 (English)','언어학 (Linguistics)','역사학 (History)','건축학 (Architecture)','디자인 (Design)'] }
+        };
+
+        // ── 사설 파운데이션 주요 기관 · 진학 가능 대학(예시) ─────────
+        const privateFoundations = [
+            { name:'CEG ONCAMPUS', tag:'대학 캠퍼스 내 · 오픈 초이스', unis:'Westminster · Southampton · Aston · Loughborough · Sunderland · London 소재 다수' },
+            { name:'INTO', tag:'대학 제휴 + INTO London(오픈 초이스)', unis:'Manchester · Newcastle · Exeter · East Anglia(UEA) · City St George’s · Stirling · Queen’s Belfast' },
+            { name:'Kings Education', tag:'오픈 초이스 · Bristol 진학 보장', unis:'Bristol(보장) · Exeter · Leeds · Newcastle · Aston · 그 외 다수' },
+            { name:'KIP (Kaplan Int’l Pathways)', tag:'오픈 초이스 · Kaplan London→Bristol 보장', unis:'Bristol(보장) · Birmingham · Glasgow · Nottingham · York · Liverpool · Bournemouth · UWE · Essex' },
+            { name:'CATS College', tag:'파운데이션 · A-level 병행', unis:'중상위권 대학 오픈 초이스(성적에 맞춰 지원)' }
         ];
 
         // ── 학부 진단 질문 ───────────────────────────────────────────
@@ -1204,6 +1223,7 @@ const majorCategories = {
 
             const d = ugRouteDecision(currentState);
             const reason = ugRouteReason(currentState);
+            const fm = fieldMajors[currentState.field] || null;
             const rec = d.key; // 'fnd' | 'iyo' | 'both'
             const ring = k => (rec === k || rec === 'both' && (k === 'fnd' || k === 'iyo')) ? 'ring-2 ring-gold' : '';
             const recChip = k => (rec === k || rec === 'both' && (k === 'fnd' || k === 'iyo')) ? '<span class="route-badge bg-gold text-black mb-4">추천 경로</span>' : '<span class="route-badge bg-gray-100 text-gray-500 mb-4">경로 안내</span>';
@@ -1221,6 +1241,22 @@ const majorCategories = {
                         </div>
                     </div>
                 </div>
+
+                ${fm ? `
+                <div class="section-light pt-16 pb-4 px-4">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="apple-card p-8 md:p-10">
+                            <div class="flex flex-wrap items-center gap-3 mb-3">
+                                <span class="route-badge bg-gold text-black">선택 계열</span>
+                                <h3 class="text-2xl font-bold text-black tracking-tight">${fm.label} — 추천 전공</h3>
+                            </div>
+                            <p class="text-mute text-[15px] mb-6 leading-relaxed">선택하신 계열에서 영국 학부로 많이 진학하는 대표 전공입니다. 세부 전공과 개설 대학은 아래 <strong class="text-ink2">대학별 공식 페이지 링크</strong>와 무료 상담에서 정확히 확인하실 수 있습니다.</p>
+                            <div class="flex flex-wrap gap-2.5">
+                                ${fm.majors.map(m => `<span class="info-badge text-[14px] py-2"><i class="fa-solid fa-graduation-cap text-royal mr-2 text-xs"></i>${m}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>` : ''}
 
                 <div class="section-light py-20 px-4">
                     <div class="max-w-5xl mx-auto">
@@ -1262,6 +1298,9 @@ const majorCategories = {
                                     <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>UCAS를 통한 지원 · 최대 5개교</li>
                                     <li class="flex gap-2.5"><i class="fa-solid fa-circle-check text-royal mt-1 text-xs shrink-0"></i>IELTS 6.5 ~ 7.0+ 등 높은 요건</li>
                                 </ul>
+                                <div class="mt-5 pt-4 border-t border-gray-100 bg-amber-50 -mx-8 -mb-8 px-8 py-4 rounded-b-2xl">
+                                    <p class="text-[13px] text-gray-700 leading-relaxed"><i class="fa-solid fa-circle-info text-royal mr-1.5"></i><strong>직접 입학</strong>(A-level · IB 등 정규 고교과정 활용)은 파운데이션 · IYO와 진행 방식이 달라 <strong>별도 서비스로 안내</strong>됩니다. 해당 경로는 종로유학원에 <strong>개별 문의</strong>해 주세요.</p>
+                                </div>
                             </div>
                         </div>
                         <p class="text-center text-[13px] text-mute mt-8">파운데이션 · IYO 학비는 기관과 전공에 따라 대략 <strong class="text-ink2">연 £20,000 ~ £30,000</strong> 수준이며 매년 변동됩니다. 정확한 금액은 상담 시 최신 요강으로 확인해 드립니다.</p>
@@ -1322,6 +1361,22 @@ const majorCategories = {
                                     <p class="mt-2"><strong class="text-ink2">추천</strong> 중상위권 학교로 안전하게 입학하기를 희망하는 학생</p>
                                 </div>
                             </div>
+                        </div>
+                        <div class="mt-12 apple-card p-8 md:p-10">
+                            <div class="flex flex-wrap items-center gap-3 mb-2">
+                                <span class="route-badge bg-[#EAFFD0] text-[#3c6b00]">사설 파운데이션</span>
+                                <h4 class="text-xl font-bold text-black tracking-tight">주요 기관별 진학 가능 대학</h4>
+                            </div>
+                            <p class="text-mute text-[14px] mb-6 leading-relaxed">CEG ONCAMPUS · INTO · Kings Education · KIP(Kaplan) 등 사설 파운데이션은 성적에 맞춰 <strong class="text-ink2">여러 대학에 오픈 초이스로 지원</strong>할 수 있어, 대부분의 대학 진학이 가능합니다. 아래는 대표 진학 대학 예시입니다.</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                ${privateFoundations.map(p => `
+                                <div class="rounded-xl border border-gray-200 p-5">
+                                    <p class="font-bold text-black text-[15px] mb-0.5">${p.name}</p>
+                                    <p class="text-royal text-[12px] font-semibold mb-2">${p.tag}</p>
+                                    <p class="text-[13px] text-gray-600 leading-relaxed">${p.unis}</p>
+                                </div>`).join('')}
+                            </div>
+                            <p class="text-[12px] text-mute mt-5 leading-relaxed"><i class="fa-solid fa-circle-info mr-1"></i>진학 가능 대학과 보장 조건은 학기별로 변동될 수 있어, 내 성적에 맞는 정확한 매칭은 무료 상담에서 확인해 드립니다.</p>
                         </div>
                         <p class="text-center text-[13px] text-mute mt-8 max-w-3xl mx-auto leading-relaxed">한 줄 요약 — <strong class="text-ink2">목표가 유동적이고 폭넓은 지원</strong>을 원하면 사설 파운데이션, <strong class="text-ink2">특정 명문대 캠퍼스 경험</strong>을 원하면 자체 대학부설, <strong class="text-ink2">확실한 진학 보장</strong>을 원하면 입학보장형이 유리합니다. 내신 · 목표에 맞는 최적의 기관은 무료 상담에서 함께 골라 드립니다.</p>
                     </div>

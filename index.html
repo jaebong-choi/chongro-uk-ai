@@ -141,6 +141,22 @@
         // ── 공통 상수 · 상태 ─────────────────────────────────────────
         const CONSULT_URL = 'https://www.coei.com/info/consult/reserve.php';
         const YT_URL = 'https://www.youtube.com/@COEI1982';
+        const UK_BOARD_URL = 'https://www.coei.com/uhak-info/rc/uk';
+        // 종로유학원 영국 진학 게시판 실제 글 (coei.com/uhak-info/rc/uk/{id})
+        const ukBoards = {
+            common: [
+                { id: 358, title: "영국 대학 진학 종합 가이드 | 진학 방법과 순서 총정리" },
+                { id: 369, title: "AI 시대 영국 유학, 취업 잘 되는 전공 5가지" }
+            ],
+            pg: [
+                { id: 389, title: "영국 석사 유학, 어떻게 준비할까? 1년 과정부터 프리마스터까지" },
+                { id: 374, title: "세계 랭킹 9위 UCL(런던대학교) 입학 가이드 2026" }
+            ],
+            ug: [
+                { id: 393, title: "영국 파운데이션 완벽 가이드 — 오픈 vs 대학부설 비교, 선택 기준" },
+                { id: 370, title: "검정고시로 영국 명문대 입학하는 방법 총정리" }
+            ]
+        };
         let currentState = {};
         let step = 0;
         let track = 'pg'; // 'pg' 석사 | 'ug' 학부
@@ -936,6 +952,39 @@ const majorCategories = {
                 </div>`;
         }
 
+        function boardHTML(kind) {
+            const base = 'https://www.coei.com/uhak-info/rc/uk/';
+            const list = (kind === 'pg')
+                ? [...ukBoards.pg, ...ukBoards.common]
+                : [...ukBoards.ug, ...ukBoards.common];
+            const label = kind === 'pg' ? '석사' : '학부';
+            return `
+                <div class="section-light py-24 px-4 border-t border-gray-200">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="text-center mb-12">
+                            <span class="inline-block py-1 px-3 bg-blue-50 rounded-full text-xs font-semibold tracking-widest text-royal mb-4 uppercase">Resource Center</span>
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">더 알아보기 — 영국 유학 정보</h3>
+                            <p class="text-lg text-mute max-w-2xl mx-auto leading-relaxed">종로유학원 영국 진학 게시판에서 ${label} 진학에 도움이 되는 글을 모았습니다.</p>
+                        </div>
+                        <div class="space-y-3 mb-10">
+                            ${list.map(a => `
+                                <a href="${base}${a.id}" target="_blank" rel="noopener"
+                                   class="flex items-center justify-between gap-4 bg-white hover:bg-gray-50 border border-gray-200 rounded-xl px-6 py-4 transition group">
+                                    <span class="text-[15px] text-gray-700 group-hover:text-black text-left flex items-center gap-3">
+                                        <i class="fa-regular fa-file-lines text-royal shrink-0"></i>${a.title}
+                                    </span>
+                                    <i class="fa-solid fa-arrow-right text-royal text-sm shrink-0 group-hover:translate-x-1 transition-transform"></i>
+                                </a>`).join('')}
+                        </div>
+                        <div class="text-center">
+                            <a href="${UK_BOARD_URL}" target="_blank" rel="noopener" class="pill-btn bg-ink2 hover:bg-black text-white px-8 py-4 text-lg font-semibold inline-flex items-center gap-2">
+                                영국 유학 정보 게시판 전체 보기 <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>`;
+        }
+
         function footerHTML() {
             return `
                 <footer class="bg-[#0b0b0c] py-12 text-center border-t border-gray-900">
@@ -1121,6 +1170,7 @@ const majorCategories = {
                     </div>
                 </div>
 
+                ${boardHTML('pg')}
                 ${ctaHTML('완벽한 준비는 전문가와 함께.', '위 결과는 2026-27 데이터에 기반한 1차 진단입니다.<br class="hidden sm:block">실제 합격 가능성을 높이는 세부 입시 요강 분석과 전략은 무료 상담을 통해 확인하세요.')}
                 ${footerHTML()}
             `;
@@ -1433,6 +1483,7 @@ const majorCategories = {
                 </div>
 
                 ${youtubeHTML()}
+                ${boardHTML('ug')}
                 ${ctaHTML('내 성적으로 어디까지 가능할까?', '위 결과는 QS 2027 데이터 기반의 1차 진단입니다.<br class="hidden sm:block">대학 · 기관별 최신 요강과 합격 전략은 종로유학원 무료 상담에서 정확히 확인하세요.')}
                 ${footerHTML()}
             `;

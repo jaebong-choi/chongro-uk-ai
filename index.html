@@ -680,6 +680,88 @@ const majorCategories = {
             { name:'CATS College', tag:'파운데이션 · A-level 병행', unis:'중상위권 대학 오픈 초이스(성적에 맞춰 지원)' }
         ];
 
+        // ── 대학별 상세 안내 데이터 (EDM 학교자료 기반) ──────────────
+        const UNI_INFO = {
+            "Imperial College London": { k:"임페리얼 칼리지 런던", found:"1907년", city:"런던 사우스켄싱턴", students:"약 19,000명", majors:["공학","컴퓨터과학","수학","전기·전자공학","지구과학","의학","경영학"], desc:"과학·기술·의학·경영에만 집중하는 연구중심 이공계 명문. 노벨상 수상자 14명을 배출했으며, 재학생의 59% 이상이 해외 출신인 세계에서 가장 국제적인 대학 중 하나입니다." },
+            "University of Oxford": { k:"옥스퍼드대학교", found:"11세기 말", city:"옥스퍼드", students:"약 26,000명", majors:["PPE(철학·정치·경제)","법학","의학","자연과학","인문학"], desc:"영어권에서 가장 오래된 대학이자 세계 최상위 명문. 39개 컬리지로 구성된 컬리지 시스템과 튜토리얼 중심 교육이 특징이며, 국제학생은 A-level·IB 최상위 성적으로 직접 지원합니다." },
+            "University of Cambridge": { k:"케임브리지대학교", found:"1209년", city:"케임브리지", students:"약 24,000명", majors:["자연과학","수학","공학","경제학","법학","의학"], desc:"옥스퍼드와 함께 '옥스브리지'로 불리는 세계 최상위 명문. 31개 컬리지 체제로 운영되며 수학·자연과학 전통이 특히 강력합니다. 노벨상 배출 세계 최다 수준입니다." },
+            "University College London (UCL)": { k:"유니버시티 칼리지 런던", found:"1826년", city:"런던 블룸스버리", students:"약 32,800명", majors:["경제학","영문학","보건학","심리학","건축학","미술사","수학","물리학"], desc:"'런던의 글로벌 대학'으로 불리는 연구중심 공립 종합대. 잉글랜드 최초로 종교·성별 무관 입학을 허용한 개방 전통의 대학이며, 약 150개국 출신 학생이 재학 중입니다." },
+            "University of Edinburgh": { k:"에든버러대학교", found:"1582년", city:"스코틀랜드 에든버러", students:"약 43,000명", majors:["TESOL","언어학","교육학","철학","심리학","금융","의학","간호학","법학","수의학"], desc:"영국 전체에서 여섯 번째로 긴 역사를 가진 스코틀랜드 수도의 명문. 세계문화유산 도시 에든버러 시내 전역에 캠퍼스가 퍼져 있으며 인문·의학·교육 계열이 고루 강합니다." },
+            "King's College London": { k:"킹스 칼리지 런던", found:"1829년", city:"런던 중심부", students:"약 31,000명", majors:["법학","의학","간호학","정신의학","전쟁학","정치학","미디어","치의학"], desc:"조지 4세의 왕립헌장으로 설립된 런던 중심부의 명문. 템스강변 캠퍼스에서 법·의학·인문사회 전 분야를 아우르며, 간호·정신의학은 세계 최상위권으로 평가받습니다." },
+            "University of Manchester": { k:"맨체스터대학교", found:"1824년", city:"맨체스터", students:"약 40,250명", majors:["경영학","마케팅","화학공학","전기·전자공학","기계공학","TESOL","국제개발","심리학","건축학"], desc:"2004년 UMIST와 빅토리아 맨체스터대가 합병해 탄생한 영국 최대급 단일 캠퍼스 대학. 노벨상 25명 배출, 산업도시 맨체스터 특유의 산학 연계와 취업 인프라가 강점입니다." },
+            "University of Bristol": { k:"브리스톨대학교", found:"1876년", city:"잉글랜드 남서부 브리스톨", students:"약 27,500명", majors:["경제학","기계공학","항공·제조공학","사회정책","심리학","법학"], desc:"1909년 왕실 칙허를 받은 레드브릭 연구 명문으로 노벨상 수상자 13명을 배출했습니다. 활기찬 대학도시 브리스톨에서 이공계와 사회과학이 고루 강세를 보입니다." },
+            "London School of Economics (LSE)": { k:"런던정치경제대학교", found:"1895년", city:"런던", students:"약 12,000명", majors:["경제학","정책학","국제관계학","정치학","법학","인류학","언론학"], desc:"사회과학에 특화된 세계 최고 수준의 대학. 경제학·정치학·국제관계 분야에서 세계 정상급이며, 졸업생의 금융·국제기구 진출이 활발합니다. 학부는 직접 지원만 가능합니다." },
+            "University of Warwick": { k:"워릭대학교", found:"1965년", city:"잉글랜드 중부 코번트리", students:"약 27,300명", majors:["회계·재무","경제학","수학","경영학","마케팅","정치학","미디어"], desc:"짧은 역사에도 영국 Top 10에 오른 실력파 명문. WBS(워릭 비즈니스 스쿨)와 수학·경제 계열이 특히 유명하며, 1983년부터 자체 파운데이션(IFP)을 운영해 온 국제학생 친화 대학입니다." },
+            "University of Birmingham": { k:"버밍엄대학교", found:"1900년", city:"잉글랜드 중부 버밍엄", students:"약 34,000명", majors:["스포츠·재활과학","화학공학","물리학","심리학","수학","전기·전자공학","교육학","경영학"], desc:"영국 최초의 시민대학(레드브릭)으로 빅토리아 여왕 칙허로 설립됐습니다. 영국 제2의 도시 버밍엄의 넓은 캠퍼스에서 공학·스포츠과학·교육학이 강세입니다." },
+            "University of Leeds": { k:"리즈대학교", found:"1904년", city:"잉글랜드 중북부 리즈", students:"약 38,000명", majors:["경영","회계·재무","기계공학","교육학","의학","법학","TESOL"], desc:"영국에서 학생 수가 가장 많은 축에 드는 대형 러셀그룹 명문. 경영·회계 계열과 교육학이 강하고, 학생 도시 리즈의 생활 인프라와 합리적 생활비가 장점입니다." },
+            "University of Glasgow": { k:"글래스고대학교", found:"1451년", city:"스코틀랜드 글래스고", students:"약 29,000명", majors:["의학","수의학","물리학","광전자공학","경영학","심리학"], desc:"영국에서 네 번째로 오래된 대학이자 애덤 스미스, 제임스 와트를 배출한 스코틀랜드 명문. 고풍스러운 캠퍼스와 의·수의학 전통, 폭넓은 전공 선택지가 강점입니다." },
+            "University of Sheffield": { k:"셰필드대학교", found:"1905년", city:"잉글랜드 북부 셰필드", students:"약 40,000명", majors:["도시계획","정치학","저널리즘","항공공학","기계공학","마케팅","국제관계"], desc:"1828년 의과대학이 전신인 러셀그룹 명문. 공학 계열 연구력이 영국 최상위권이며 저널리즘·도시계획 등 특성화 전공도 유명합니다. 학생 물가가 합리적인 도시입니다." },
+            "Durham University": { k:"더럼대학교", found:"1832년", city:"잉글랜드 북부 더럼", students:"약 18,700명", majors:["경제학","법학","수학","역사학","비즈니스","지리학","심리학"], desc:"잉글랜드에서 옥스브리지 다음으로 오랜 역사를 가진 컬리지형 전통 명문. 세계문화유산인 더럼 성·대성당과 함께하는 캠퍼스, 옥스브리지식 컬리지 문화가 특징입니다." },
+            "University of Nottingham": { k:"노팅엄대학교", found:"1881년", city:"잉글랜드 중부 노팅엄", students:"약 34,300명", majors:["경제학","경영학","건축학","약학","의학","법학"], desc:"영국을 넘어 중국·말레이시아에도 캠퍼스를 둔 글로벌 러셀그룹 대학. 약학·의학 계열이 특히 유명하며 넓고 아름다운 University Park 캠퍼스로 잘 알려져 있습니다." },
+            "University of Southampton": { k:"사우샘프턴대학교", found:"1862년", city:"잉글랜드 남부 사우샘프턴", students:"약 24,600명", majors:["전자공학","기계공학","컴퓨터공학","간호학","의학","마케팅","음악"], desc:"러셀그룹 창립 멤버로 전자·컴퓨터공학 연구가 영국 최상위권입니다. 남부 해안 도시 특유의 온화한 환경에 캠퍼스가 시내에서 가까워 생활이 편리합니다." },
+            "University of St Andrews": { k:"세인트앤드루스대학교", found:"1413년", city:"스코틀랜드 세인트앤드루스", students:"약 10,000명", majors:["국제관계학","경제학","물리학","심리학","고전학"], desc:"스코틀랜드에서 가장 오래된 대학으로, 영국 국내 평가에서 옥스브리지와 1~2위를 다투는 명문. 바닷가 소도시 전체가 캠퍼스인 친밀한 학풍이 특징입니다." },
+            "University of Bath": { k:"바스대학교", found:"1856년", city:"잉글랜드 바스", students:"약 18,700명", majors:["화학공학","전기·전자공학","기계공학","회계·재무","경영","마케팅"], desc:"유네스코 세계문화유산 도시 바스가 내려다보이는 캠퍼스의 실무 강호. 경영·공학 계열 취업률이 영국 최상위권이며 산업 연계 인턴십(플레이스먼트) 제도로 유명합니다." },
+            "University of Exeter": { k:"엑서터대학교", found:"1838년", city:"잉글랜드 남서부 엑서터", students:"약 24,000명", majors:["회계학","재무학","경영학","스포츠과학","영문학","국제관계학"], desc:"잉글랜드 남서부의 아름다운 캠퍼스를 가진 러셀그룹 명문. 회계·재무와 스포츠과학이 강하며, 최근 QS 순위가 크게 상승하고 있는 성장세의 대학입니다." },
+            "Newcastle University": { k:"뉴캐슬대학교", found:"1834년", city:"잉글랜드 북동부 뉴캐슬", students:"약 28,000명", majors:["의학","건축학","컴퓨터공학","경영학","미디어"], desc:"1834년 의과대학이 전신인 러셀그룹 명문. 캠퍼스가 시내 중심에 있어 생활이 편리하고, 영국 주요 학생 도시 중 물가가 합리적인 편이라 유학 만족도가 높습니다." },
+            "Lancaster University": { k:"랭커스터대학교", found:"1964년", city:"잉글랜드 북서부 랭커스터", students:"약 16,000명", majors:["비즈니스","회계학","마케팅","언어학","TESOL","미디어","물리학"], desc:"영국 국내 평가 Top 15 단골의 컬리지형 캠퍼스 대학. 경영대학(LUMS)은 영국 내 최상위 평가를 받으며, 9개 컬리지 기숙 시스템으로 국제학생 정착 지원이 잘 되어 있습니다." },
+            "University of Sussex": { k:"서식스대학교", found:"1961년", city:"잉글랜드 남부 브라이튼", students:"약 17,000명", majors:["국제개발학","미디어학","경영학","국제교육학","국제관계학"], desc:"사우스다운스 국립공원으로 둘러싸인 캠퍼스의 연구 명문. 국제개발학은 세계 1위 평가를 받은 바 있으며, 자유로운 해변 도시 브라이튼의 분위기가 매력입니다." },
+            "University of York": { k:"요크대학교", found:"1963년", city:"잉글랜드 요크", students:"약 19,000명", majors:["TESOL","회계학","정치학","화학","컴퓨터과학","교육학","영문학"], desc:"9개 기숙형 컬리지로 이루어진 러셀그룹 대학. TESOL·교육학과 컴퓨터과학이 강하며, 중세 성곽 도시 요크의 안전하고 아늑한 환경이 유학 생활에 좋습니다." },
+            "Loughborough University": { k:"러프버러대학교", found:"1909년", city:"잉글랜드 러프버러", students:"약 15,000명", majors:["스포츠경영","스포츠마케팅","항공우주공학","건축학","경영학","경제학"], desc:"스포츠 분야 세계 1위에 여러 차례 오른 스포츠·공학 특성화 명문. 영국 최대 규모의 단일 캠퍼스와 올림픽 수준의 스포츠 시설을 갖추고 있습니다." },
+            "Queen Mary University of London": { k:"퀸메리 런던대학교", found:"1785년", city:"런던 동부", students:"약 27,000명", majors:["법학","경제학","미디어&필름","의학","치의학"], desc:"런던대학교(UoL) 소속의 러셀그룹 멤버로, 잉글랜드 최초 의대인 Royal London Hospital이 뿌리입니다. 런던 대학 중 드물게 캠퍼스형 기숙 환경을 갖춘 것이 장점입니다." }
+        };
+        const UNI_ALIAS = { "King's College London (KCL)": "King's College London" };
+        function uniInfo(name) { return UNI_INFO[name] || UNI_INFO[UNI_ALIAS[name]] || null; }
+
+        function showUniDetail(name) {
+            const info = uniInfo(name);
+            if (!info) return;
+            const ug = UG_UNIS.find(u => u.n === name); // 학부 경로 데이터 (있는 경우)
+            let m = document.getElementById('uni-modal');
+            if (!m) { m = document.createElement('div'); m.id = 'uni-modal'; document.body.appendChild(m); }
+            const routes = [];
+            if (ug) {
+                if (ug.grp === 'direct') routes.push('<span class="route-badge bg-gray-100 text-gray-600"><i class="fa-solid fa-arrow-right text-[10px]"></i> 직접 지원</span>');
+                if (ug.fnd) routes.push(`<span class="route-badge bg-blue-50 text-royal"><i class="fa-solid fa-layer-group text-[10px]"></i> ${ug.fnd}</span>`);
+                if (ug.iyo) routes.push('<span class="route-badge bg-[#EAFFD0] text-[#3c6b00]"><i class="fa-solid fa-forward text-[10px]"></i> IYO · 2학년 편입</span>');
+            }
+            m.innerHTML = `
+                <div class="fixed inset-0 z-[100]">
+                    <div class="absolute inset-0 bg-black/70" onclick="closeUniDetail()"></div>
+                    <div class="relative max-w-2xl mx-auto mt-8 md:mt-16 mb-8 mx-4 sm:mx-auto bg-white rounded-3xl shadow-2xl max-h-[85vh] overflow-y-auto">
+                        <div class="bg-ink2 text-white p-8 md:p-10 relative">
+                            <button onclick="closeUniDetail()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center transition"><i class="fa-solid fa-xmark"></i></button>
+                            ${ug ? `<span class="inline-block py-1 px-3 border border-gray-500 rounded-full text-[11px] font-semibold tracking-widest text-gray-300 mb-4 uppercase">QS 2027 세계 ${ug.qs}위</span>` : ''}
+                            <h3 class="text-2xl md:text-3xl font-bold tracking-tight">${name}</h3>
+                            <p class="text-gray-400 mt-1">${info.k}</p>
+                        </div>
+                        <div class="p-8 md:p-10">
+                            <div class="grid grid-cols-3 gap-3 mb-7 text-center">
+                                <div class="bg-paper rounded-xl py-4 px-2"><p class="text-[11px] text-mute font-semibold mb-1">설립</p><p class="text-[14px] font-bold text-black">${info.found}</p></div>
+                                <div class="bg-paper rounded-xl py-4 px-2"><p class="text-[11px] text-mute font-semibold mb-1">위치</p><p class="text-[14px] font-bold text-black leading-tight">${info.city}</p></div>
+                                <div class="bg-paper rounded-xl py-4 px-2"><p class="text-[11px] text-mute font-semibold mb-1">학생 수</p><p class="text-[14px] font-bold text-black">${info.students}</p></div>
+                            </div>
+                            <p class="text-[15px] text-gray-700 leading-relaxed mb-7">${info.desc}</p>
+                            <p class="text-[13px] font-semibold text-ink2 mb-2.5">우세 전공</p>
+                            <div class="flex flex-wrap gap-2 mb-7">${info.majors.map(mj => `<span class="info-badge text-[13px]">${mj}</span>`).join('')}</div>
+                            ${routes.length ? `<p class="text-[13px] font-semibold text-ink2 mb-2.5">학부 진입 경로</p><div class="flex flex-wrap gap-2 mb-3">${routes.join('')}</div>` : ''}
+                            ${ug ? `<p class="text-[13px] text-mute leading-relaxed mb-7">${ug.note}</p>` : '<div class="mb-4"></div>'}
+                            <div class="flex flex-col sm:flex-row gap-2.5">
+                                <a href="${CONSULT_URL}" target="_blank" rel="noopener" class="consult-banner text-center font-semibold py-3.5 px-4 flex-1 flex items-center justify-center gap-2 text-[15px]"><i class="fa-solid fa-comments text-xs"></i> 이 대학, 종로유학원 상담 신청</a>
+                                ${ug ? `<a href="${ug.url}" target="_blank" rel="noopener" class="uni-link-banner text-center font-semibold py-3.5 px-4 flex-1 flex items-center justify-center gap-2 text-[15px]">공식 페이지 <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-70"></i></a>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            m.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeUniDetail() {
+            const m = document.getElementById('uni-modal');
+            if (m) { m.style.display = 'none'; m.innerHTML = ''; }
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeUniDetail(); });
+
         // ── 학부 진단 질문 ───────────────────────────────────────────
         const ugQuestions = [
             {
@@ -1055,7 +1137,8 @@ const majorCategories = {
                 <div class="section-light py-20 px-4">
                     <div class="max-w-5xl mx-auto">
                         <div class="text-center mb-16">
-                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">전공 분석 및 추천 대학</h3>
+                            <span class="inline-block py-1 px-3 bg-blue-50 rounded-full text-xs font-semibold tracking-widest text-royal mb-4 uppercase">Selected Major</span>
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${currentState.major} — 추천 대학</h3>
                             <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">선택하신 <strong class="text-ink2">${currentState.major}</strong> 전공은 ${majorInfo.desc}</p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -1076,6 +1159,7 @@ const majorCategories = {
                                         <a href="${school.link}" target="_blank" rel="noopener" class="uni-link-banner text-center font-semibold py-3.5 px-4 w-full flex items-center justify-center gap-2 text-[15px]">
                                             대학 공식 페이지 보기 <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-70"></i>
                                         </a>
+                                        ${uniInfo(school.name) ? `<button onclick="showUniDetail(this.dataset.u)" data-u="${school.name.replace(/"/g, '&quot;')}" class="text-[13px] text-mute hover:text-royal font-medium py-1 transition">학교 소개 · 기본 정보 보기 <i class="fa-solid fa-chevron-right text-[10px]"></i></button>` : ''}
                                     </div>
                                 </div>`).join('')}
                         </div>
@@ -1128,8 +1212,6 @@ const majorCategories = {
                     </div>
                 </div>
 
-                ${youtubeHTML()}
-
                 <div class="section-light py-24 px-4 border-t border-gray-200">
                     <div class="max-w-5xl mx-auto">
                         <div class="text-center mb-12">
@@ -1170,8 +1252,9 @@ const majorCategories = {
                     </div>
                 </div>
 
-                ${boardHTML('pg')}
                 ${ctaHTML('완벽한 준비는 전문가와 함께.', '위 결과는 2026-27 데이터에 기반한 1차 진단입니다.<br class="hidden sm:block">실제 합격 가능성을 높이는 세부 입시 요강 분석과 전략은 무료 상담을 통해 확인하세요.')}
+                ${boardHTML('pg')}
+                ${youtubeHTML()}
                 ${footerHTML()}
             `;
             resultSection.innerHTML = html;
@@ -1234,23 +1317,23 @@ const majorCategories = {
         }
 
         function ugCardHTML(u) {
-            const badges = [];
-            badges.push(`<div class="info-badge"><i class="fa-solid fa-trophy text-yellow-500 mr-2 text-xs"></i> QS 2027 세계 ${u.qs}위</div>`);
-            badges.push(`<div class="info-badge"><i class="fa-solid fa-location-dot text-gray-400 mr-2 text-xs"></i> ${u.city}</div>`);
+            const hasInfo = !!uniInfo(u.n);
             const routes = [];
             if (u.grp === 'direct') routes.push(`<span class="route-badge bg-gray-100 text-gray-600"><i class="fa-solid fa-arrow-right text-[10px]"></i> 직접 지원</span>`);
             if (u.fnd) routes.push(`<span class="route-badge bg-blue-50 text-royal"><i class="fa-solid fa-layer-group text-[10px]"></i> ${u.fnd}</span>`);
-            if (u.iyo) routes.push(`<span class="route-badge bg-[#EAFFD0] text-[#3c6b00]"><i class="fa-solid fa-forward text-[10px]"></i> IYO · 2학년 편입</span>`);
+            if (u.iyo) routes.push(`<span class="route-badge bg-[#EAFFD0] text-[#3c6b00]"><i class="fa-solid fa-forward text-[10px]"></i> IYO</span>`);
             return `
-                <div class="apple-card p-7 md:p-8 flex flex-col h-full">
-                    <h4 class="text-xl font-bold text-black tracking-tight leading-snug">${u.n}</h4>
-                    <p class="text-mute text-[13px] font-medium mb-4">${u.k}</p>
-                    <div class="flex flex-wrap gap-2 mb-3">${badges.join('')}</div>
-                    <div class="flex flex-wrap gap-2 mb-5">${routes.join('')}</div>
-                    <p class="text-[14px] text-gray-600 leading-relaxed mb-7 flex-grow">${u.note}</p>
-                    <div class="flex gap-2.5">
-                        <a href="${CONSULT_URL}" target="_blank" rel="noopener" class="consult-banner text-center font-semibold py-3 px-3 flex-1 flex items-center justify-center gap-2 text-[14px]"><i class="fa-solid fa-comments text-xs"></i> 상담 신청</a>
-                        <a href="${u.url}" target="_blank" rel="noopener" class="uni-link-banner text-center font-semibold py-3 px-3 flex-1 flex items-center justify-center gap-2 text-[14px]">공식 페이지 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-70"></i></a>
+                <div class="apple-card px-5 py-4 md:px-6 md:py-5 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                    <div class="flex-grow min-w-0 ${hasInfo ? 'cursor-pointer' : ''}" ${hasInfo ? `onclick="showUniDetail(this.dataset.u)" data-u="${u.n.replace(/"/g, '&quot;')}"` : ''}>
+                        <div class="flex flex-wrap items-baseline gap-x-2">
+                            <h4 class="text-[16px] font-bold text-black tracking-tight leading-snug">${u.n}</h4>
+                            <span class="text-mute text-[12px] font-medium">${u.k} · ${u.city} · QS ${u.qs}위</span>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-2">${routes.join('')}</div>
+                    </div>
+                    <div class="flex gap-2 shrink-0">
+                        ${hasInfo ? `<button onclick="showUniDetail(this.dataset.u)" data-u="${u.n.replace(/"/g, '&quot;')}" class="uni-link-banner text-center font-semibold py-2.5 px-4 text-[13px] flex items-center gap-1.5">학교 안내 <i class="fa-solid fa-chevron-right text-[10px] opacity-60"></i></button>` : `<a href="${u.url}" target="_blank" rel="noopener" class="uni-link-banner text-center font-semibold py-2.5 px-4 text-[13px] flex items-center gap-1.5">공식 페이지 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-60"></i></a>`}
+                        <a href="${CONSULT_URL}" target="_blank" rel="noopener" class="consult-banner text-center font-semibold py-2.5 px-4 text-[13px] flex items-center gap-1.5"><i class="fa-solid fa-comments text-[11px]"></i> 상담</a>
                     </div>
                 </div>`;
         }
@@ -1433,19 +1516,19 @@ const majorCategories = {
                 </div>
 
                 <div class="section-light py-20 px-4 border-t border-gray-200">
-                    <div class="max-w-6xl mx-auto">
+                    <div class="max-w-4xl mx-auto">
                         <div class="text-center mb-10">
-                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">영국 대학 22개교 진입 경로 한눈에</h3>
-                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">QS 세계대학랭킹 2027 기준 — 대학별 파운데이션 운영 기관과 IYO 가능 여부를 확인하세요.</p>
+                            <h3 class="text-3xl md:text-4xl font-bold tracking-tighter2 mb-4 text-black">${fm ? fm.label + ' 진학 — ' : ''}추천 영국 대학</h3>
+                            <p class="text-lg text-mute max-w-3xl mx-auto leading-relaxed">진단 결과에 맞는 진입 경로 기준으로 추려 드렸습니다.<br class="hidden sm:block"><strong class="text-ink2">대학 이름이나 '학교 안내'를 누르면</strong> 학교 소개 · 우세 전공 · 진입 경로를 확인할 수 있습니다.</p>
                         </div>
                         <div class="flex flex-wrap items-center justify-center gap-2.5 mb-4">
-                            <button class="filter-chip active" data-f="all" onclick="renderUgCards('all')">전체</button>
+                            <button class="filter-chip" data-f="all" onclick="renderUgCards('all')">전체</button>
                             <button class="filter-chip" data-f="iyo" onclick="renderUgCards('iyo')">IYO 운영</button>
                             <button class="filter-chip" data-f="fnd" onclick="renderUgCards('fnd')">파운데이션 운영</button>
                             <button class="filter-chip" data-f="direct" onclick="renderUgCards('direct')">직접 지원</button>
                         </div>
                         <p class="text-center text-[13px] text-mute mb-10"><span id="ug-count"></span> 표시 중 · 과정 개설 전공과 요건은 학기마다 변동될 수 있습니다</p>
-                        <div id="ug-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                        <div id="ug-cards" class="space-y-3"></div>
                     </div>
                 </div>
 
@@ -1482,13 +1565,14 @@ const majorCategories = {
                     </div>
                 </div>
 
-                ${youtubeHTML()}
-                ${boardHTML('ug')}
                 ${ctaHTML('내 성적으로 어디까지 가능할까?', '위 결과는 QS 2027 데이터 기반의 1차 진단입니다.<br class="hidden sm:block">대학 · 기관별 최신 요강과 합격 전략은 종로유학원 무료 상담에서 정확히 확인하세요.')}
+                ${boardHTML('ug')}
+                ${youtubeHTML()}
                 ${footerHTML()}
             `;
             resultSection.innerHTML = html;
-            renderUgCards('all');
+            // 진단 추천 경로를 기본 필터로 — 표시 대학 수를 줄여 심플하게
+            renderUgCards(rec === 'iyo' ? 'iyo' : rec === 'fnd' ? 'fnd' : 'all');
             window.scrollTo({ top: 0 });
         }
 

@@ -143,9 +143,36 @@
                             <li class="flex items-start gap-3.5"><span class="w-9 h-9 rounded-xl bg-blue-50 text-royal flex items-center justify-center shrink-0"><i class="fa-solid fa-comments"></i></span><span class="text-[15px] text-gray-700 leading-snug pt-1.5">상담부터 출국까지 담당 카운슬러 1:1 전담제</span></li>
                         </ul>
                         <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="https://www.coei.com/info/customer-reviews/thanks.php" target="_blank" rel="noopener" class="pill-btn bg-ink2 hover:bg-black text-white px-7 py-3.5 font-semibold text-center">실제 후기 읽어보기</a>
+                            <a href="https://www.coei.com/rc/uk/university-cases.php" target="_blank" rel="noopener" class="pill-btn bg-ink2 hover:bg-black text-white px-7 py-3.5 font-semibold text-center">영국 합격 사례 보기</a>
                             <a href="https://www.coei.com/info/consult/reserve.php" target="_blank" rel="noopener" class="pill-btn bg-white border border-gray-300 text-ink2 hover:bg-gray-50 px-7 py-3.5 font-medium text-center">무료 상담 예약</a>
                         </div>
+                    </div>
+                </div>
+
+                <div class="max-w-6xl mx-auto mt-20">
+                    <div class="flex flex-wrap items-end justify-between gap-3 mb-6">
+                        <div>
+                            <p class="text-royal font-semibold tracking-widest text-[12px] uppercase mb-2">2026년 9월 학기 · 최근 합격</p>
+                            <h3 class="text-2xl font-bold tracking-tight text-black">종로유학원 학생들의 영국 합격 소식</h3>
+                        </div>
+                        <a href="https://www.coei.com/rc/uk/university-cases.php" target="_blank" rel="noopener" class="text-royal font-semibold text-[14px] hover:underline shrink-0">전체 합격 사례 보기 <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <a href="https://www.coei.com/rc/uk/university-cases.php" target="_blank" rel="noopener" class="apple-card p-6 block hover:shadow-lg transition">
+                            <p class="text-[12px] font-semibold text-mute mb-2"><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>안*상 학생 · 26년 9월 학기</p>
+                            <p class="font-bold text-black text-[16px] leading-snug mb-1">University College London (UCL)</p>
+                            <p class="text-[13px] text-royal font-semibold">History, Politics and Economics</p>
+                        </a>
+                        <a href="https://www.coei.com/rc/uk/university-cases.php" target="_blank" rel="noopener" class="apple-card p-6 block hover:shadow-lg transition">
+                            <p class="text-[12px] font-semibold text-mute mb-2"><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>박*연 학생 · 26년 9월 학기</p>
+                            <p class="font-bold text-black text-[16px] leading-snug mb-1">Durham University</p>
+                            <p class="text-[13px] text-royal font-semibold">Marketing</p>
+                        </a>
+                        <a href="https://www.coei.com/rc/uk/university-cases.php" target="_blank" rel="noopener" class="apple-card p-6 block hover:shadow-lg transition">
+                            <p class="text-[12px] font-semibold text-mute mb-2"><i class="fa-solid fa-circle-check text-green-500 mr-1.5"></i>배*현 학생 · 26년 9월 학기</p>
+                            <p class="font-bold text-black text-[16px] leading-snug mb-1">Loughborough University</p>
+                            <p class="text-[13px] text-royal font-semibold">Sport Management</p>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -154,7 +181,7 @@
                 <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
                     <div class="order-2 md:order-1">
                         <p class="text-royal font-semibold tracking-widest text-[13px] uppercase mb-4">London Office</p>
-                        <h3 class="text-2xl md:text-3xl font-bold tracking-tighter2 leading-tight mb-5 text-black">런던 블룸스버리,<br>대영박물관 옆에 종로유학원이 있습니다.</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold tracking-tighter2 leading-tight mb-5 text-black">런던의 중심,<br>종로유학원이 있습니다.</h3>
                         <p class="text-[15px] text-gray-600 leading-relaxed mb-7">입학 수속은 서울에서 끝나지만 유학 생활은 도착부터 시작이죠. 숙소와 은행 계좌, 휴대폰 개통, 병원과 보험 — 낯선 첫 달에 필요한 일들을 런던지사가 한국어로 도와드립니다.</p>
                         <ul class="space-y-2.5 text-[14px] text-gray-700 mb-7">
                             <li class="flex gap-3"><i class="fa-solid fa-location-dot text-royal mt-1 shrink-0"></i>4/4a Bloomsbury Square, London WC1A 2RP</li>
@@ -871,7 +898,8 @@ const majorCategories = {
                     { label: "컴퓨터 · 데이터 · AI", value: "cs" },
                     { label: "사회과학 · 미디어 · 국제관계", value: "soc" },
                     { label: "자연과학 · 수학", value: "sci" },
-                    { label: "인문 · 어학 · 예술", value: "arts" }
+                    { label: "인문 · 어학 · 예술", value: "arts" },
+                    { label: "찾는 계열이 없어요 · 특수 전공 직접 입력", value: "__custommajor__" }
                 ]
             },
             {
@@ -886,7 +914,40 @@ const majorCategories = {
         ];
 
         // ── 플로우 ───────────────────────────────────────────────────
-        function goHome() { location.reload(); }
+        function goHome() { history.replaceState(null, '', location.pathname); location.reload(); }
+
+        // ── 결과 링크 공유 · 복원 ────────────────────────────────────
+        function buildResultLink() {
+            return location.origin + location.pathname + '#p=' + encodeURIComponent(JSON.stringify({ t: track, s: currentState }));
+        }
+        function fallbackCopy(text) {
+            const ta = document.createElement('textarea');
+            ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            ta.remove();
+        }
+        function copyResultLink() {
+            const link = buildResultLink();
+            const btn = document.getElementById('share-btn');
+            const done = () => {
+                if (!btn) return;
+                const orig = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> 복사 완료!';
+                setTimeout(() => { btn.innerHTML = orig; }, 2000);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(link).then(done).catch(() => { fallbackCopy(link); done(); });
+            } else { fallbackCopy(link); done(); }
+        }
+        function shareBtnHTML() {
+            return `
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-2">
+                    <button id="share-btn" onclick="copyResultLink()" class="pill-btn bg-royal hover:bg-blue-800 text-white px-6 py-3 text-[15px] font-semibold inline-flex items-center gap-2 w-full sm:w-auto justify-center"><i class="fa-solid fa-link text-xs"></i> 결과 링크 복사</button>
+                    <button onclick="goHome()" class="pill-btn bg-transparent border border-gray-600 text-gray-300 hover:border-gold hover:text-gold px-6 py-3 text-[15px] font-medium inline-flex items-center gap-2 w-full sm:w-auto justify-center">다시 진단하기 <i class="fa-solid fa-rotate-right text-xs"></i></button>
+                </div>
+                <p class="text-[12px] text-gray-500 mt-4">링크를 복사해 카카오톡 · 문자로 전달하면 같은 결과 페이지가 열립니다.</p>`;
+        }
 
         function activeQuestions() { return track === 'pg' ? pgQuestions : ugQuestions; }
 
@@ -965,12 +1026,74 @@ const majorCategories = {
                 setTimeout(renderTestTypeChoice, 500);
                 return;
             }
+            if (value === '__custommajor__') {
+                addChatBubble('user', label);
+                document.getElementById('options-container').innerHTML = '';
+                addChatBubble('ai', '희망하시는 전공명을 자세히 입력해주세요. 가장 가까운 계열로 매칭해 분석해 드립니다.<br><span class="block mt-2 text-[13px] text-gray-500">예) 스포츠 매니지먼트, 게임 디자인, 물리치료학, 항공운항학</span>');
+                setTimeout(renderCustomMajorInput, 500);
+                return;
+            }
             addChatBubble('user', label);
             document.getElementById('options-container').innerHTML = '';
             const q = activeQuestions()[step];
             currentState[q.key] = value;
             step++;
             setTimeout(askQuestion, 600);
+        }
+
+        // ── 특수 전공 직접 입력 → 가장 가까운 계열 매칭 ─────────────
+        const CUSTOM_FIELD_MAP = [
+            ['biz',  ['경영', '매니지먼트', '마케팅', '회계', '재무', '금융', '경제', '무역', '물류', '호텔', '관광', '스포츠', '비즈니스', 'mba', 'business', 'management', 'marketing', 'finance', 'account', 'hospitality', 'tourism', 'sport', 'logistics']],
+            ['cs',   ['컴퓨터', '소프트', '프로그래', '코딩', '게임', '인공지능', '데이터', '보안', '정보', 'it', 'ai', 'computer', 'software', 'data', 'cyber', 'game']],
+            ['eng',  ['공학', '기계', '전자', '전기', '토목', '항공우주', '자동차', '로봇', '화공', '재료', '조선', '메카', 'engineering', 'mechanical', 'electrical', 'civil', 'aerospace', 'robot']],
+            ['sci',  ['수학', '물리', '화학', '생물', '생명', '통계', '천문', '지질', '간호', '약학', '치료', '보건', '의예', '수의', 'math', 'physics', 'chemi', 'biolog', 'statistic', 'nursing', 'pharma', 'therapy', 'health']],
+            ['soc',  ['미디어', '언론', '방송', '신문', '국제', '정치', '외교', '사회', '심리', '법', '범죄', '커뮤니케이션', '광고', '홍보', '교육', 'media', 'politic', 'international', 'psycho', 'law', 'communication', 'sociology', 'education']],
+            ['arts', ['미술', '디자인', '음악', '예술', '영문', '어학', '언어', '역사', '철학', '문학', '패션', '건축', '영화', '연기', '공연', '애니', 'art', 'design', 'music', 'fashion', 'film', 'architec', 'history', 'literature', 'language', 'drama', 'animation']]
+        ];
+        function mapCustomMajorToField(text) {
+            const t = text.toLowerCase();
+            for (const [f, keys] of CUSTOM_FIELD_MAP) if (keys.some(k => t.includes(k))) return f;
+            return 'biz'; // 매칭 실패 시 개설 폭이 가장 넓은 경영 계열로 안내
+        }
+        function renderCustomMajorInput() {
+            const c = document.getElementById('options-container');
+            c.innerHTML = '';
+            const wrap = document.createElement('div');
+            wrap.className = 'sm:col-span-2 flex flex-col gap-3';
+            wrap.innerHTML = `
+                <input id="customMajorInput" type="text" maxlength="40" placeholder="전공명을 입력하세요 (예: 스포츠 매니지먼트)"
+                    class="bg-[#2d2d2f] text-white border border-[#3d3d40] rounded-2xl py-3.5 px-5 text-[15px] focus:outline-none focus:border-gold w-full placeholder-gray-500" />
+                <div class="flex gap-3">
+                    <button id="customMajorBtn" class="pill-btn bg-gold hover:bg-gold-deep text-black py-3.5 px-4 font-semibold text-[15px] flex-1">이 전공으로 분석하기</button>
+                    <button id="customMajorBack" class="pill-btn bg-[#2d2d2f] text-gray-300 border border-[#3d3d40] hover:bg-[#3d3d40] py-3.5 px-5 font-medium text-[15px]">← 뒤로</button>
+                </div>`;
+            c.appendChild(wrap);
+            const submit = () => {
+                const input = document.getElementById('customMajorInput');
+                const raw = input.value.trim().replace(/[<>&"']/g, '');
+                if (!raw) { input.value = ''; input.placeholder = '전공명을 입력해주세요'; return; }
+                const f = mapCustomMajorToField(raw);
+                currentState.customMajor = raw;
+                currentState.field = f;
+                addChatBubble('user', raw);
+                addChatBubble('ai', `'<strong>${raw}</strong>' 전공은 <strong>${fieldMajors[f].label}</strong> 계열과 가장 가깝습니다. 이 계열 기준으로 분석을 진행하고, 실제 개설 대학과 세부 전공명은 상담에서 정확히 확인해 드립니다.`);
+                document.getElementById('options-container').innerHTML = '';
+                step++;
+                setTimeout(askQuestion, 1100);
+            };
+            document.getElementById('customMajorBtn').onclick = submit;
+            document.getElementById('customMajorInput').addEventListener('keydown', e => { if (e.key === 'Enter') submit(); });
+            document.getElementById('customMajorInput').focus();
+            document.getElementById('customMajorBack').onclick = () => {
+                c.innerHTML = '';
+                activeQuestions()[step].options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = OPT_BTN_CLASS;
+                    btn.innerText = opt.label;
+                    btn.onclick = () => handleAnswer(opt.value, opt.label);
+                    c.appendChild(btn);
+                });
+            };
         }
 
         // ── 석사: 계열 → 세부 전공 2단계 ────────────────────────────
@@ -1211,6 +1334,7 @@ const majorCategories = {
                                 ? pathwayReason + '<br><br>프리마스터를 이수할 경우, 아카데믹 영어 실력 향상은 물론 논문 작성법(Research Skill)을 미리 익힐 수 있어 본 과정 진학 후 우수한 성적을 거두는 데 매우 유리합니다.'
                                 : '지원 전공에 대한 높은 적합성과 양호한 성적을 보유하고 있습니다. 학업계획서(SOP)와 이력서(CV)에 본인만의 스토리를 전략적으로 담아 명문대 Direct 입학을 정조준합니다.'}</p>
                         </div>
+                        ${shareBtnHTML()}
                     </div>
                 </div>
 
@@ -1338,6 +1462,7 @@ const majorCategories = {
                 ${footerHTML()}
             `;
             resultSection.innerHTML = html;
+            history.replaceState(null, '', '#p=' + encodeURIComponent(JSON.stringify({ t: track, s: currentState })));
             window.scrollTo({ top: 0 });
         }
 
@@ -1473,7 +1598,7 @@ const majorCategories = {
             document.querySelectorAll('.filter-chip[data-s]').forEach(ch => ch.classList.toggle('active', ch.dataset.s === ugSort));
             const list = UG_UNIS
                 .filter(u => ugFilter === 'all' ? true : ugFilter === 'iyo' ? u.iyo : ugFilter === 'fnd' ? !!u.fnd : u.grp === 'direct')
-                .sort((a, b) => ugSort === 'name' ? a.n.localeCompare(b.n) : a.qs - b.qs);
+                .sort((a, b) => ugSort === 'name' ? a.n.localeCompare(b.n) : ugSort === 'kname' ? a.k.localeCompare(b.k, 'ko') : a.qs - b.qs);
             const pages = Math.max(1, Math.ceil(list.length / UG_PAGE_SIZE));
             if (ugPage > pages) ugPage = pages;
             const slice = list.slice((ugPage - 1) * UG_PAGE_SIZE, ugPage * UG_PAGE_SIZE);
@@ -1498,6 +1623,7 @@ const majorCategories = {
             const d = ugRouteDecision(currentState);
             const reason = ugRouteReason(currentState);
             const fm = fieldMajors[currentState.field] || null;
+            const cm = currentState.customMajor || null; // 직접 입력한 특수 전공명
             const rec = d.key; // 'fnd' | 'iyo' | 'both'
             const ft = fndTypeRecommend(currentState); // 성적별 파운데이션 유형 추천 (복수 가능)
             const ftRing = t => ft.types.includes(t) ? 'ring-2 ring-gold' : '';
@@ -1520,6 +1646,7 @@ const majorCategories = {
                         <div class="bg-[#1d1d1f] rounded-2xl p-6 text-left border border-[#2d2d2f] max-w-2xl mx-auto mb-8">
                             <p class="text-sm text-gray-300 leading-relaxed"><strong class="text-white">진단 사유:</strong> ${reason}</p>
                         </div>
+                        ${shareBtnHTML()}
                     </div>
                 </div>
 
@@ -1528,10 +1655,12 @@ const majorCategories = {
                     <div class="max-w-5xl mx-auto">
                         <div class="apple-card p-8 md:p-10">
                             <div class="flex flex-wrap items-center gap-3 mb-3">
-                                <span class="route-badge bg-gold text-black">선택 계열</span>
-                                <h3 class="text-2xl font-bold text-black tracking-tight">${fm.label} — 추천 전공</h3>
+                                <span class="route-badge bg-gold text-black">${cm ? '입력 전공' : '선택 계열'}</span>
+                                <h3 class="text-2xl font-bold text-black tracking-tight">${cm ? `'${cm}' — 가장 가까운 계열: ${fm.label}` : `${fm.label} — 추천 전공`}</h3>
                             </div>
-                            <p class="text-mute text-[15px] mb-6 leading-relaxed">선택하신 계열에서 영국 학부로 많이 진학하는 대표 전공입니다. 세부 전공과 개설 대학은 아래 <strong class="text-ink2">대학별 공식 페이지 링크</strong>와 무료 상담에서 정확히 확인하실 수 있습니다.</p>
+                            <p class="text-mute text-[15px] mb-6 leading-relaxed">${cm
+                                ? `입력하신 '<strong class="text-ink2">${cm}</strong>' 전공은 <strong class="text-ink2">${fm.label}</strong> 계열 기준으로 분석했습니다. 아래는 이 계열의 대표 전공이며, '${cm}' 개설 대학과 정확한 코스명은 무료 상담에서 확인해 드립니다.`
+                                : `선택하신 계열에서 영국 학부로 많이 진학하는 대표 전공입니다. 세부 전공과 개설 대학은 아래 <strong class="text-ink2">대학별 공식 페이지 링크</strong>와 무료 상담에서 정확히 확인하실 수 있습니다.`}</p>
                             <div class="flex flex-wrap gap-2.5">
                                 ${fm.majors.map(m => `<span class="info-badge text-[14px] py-2"><i class="fa-solid fa-graduation-cap text-royal mr-2 text-xs"></i>${m}</span>`).join('')}
                             </div>
@@ -1723,6 +1852,7 @@ const majorCategories = {
                             <span class="text-[12px] text-mute font-semibold mr-1">정렬</span>
                             <button class="filter-chip" data-s="qs" onclick="setUgSort('qs')"><i class="fa-solid fa-trophy text-[11px] mr-1"></i>QS 랭킹순</button>
                             <button class="filter-chip" data-s="name" onclick="setUgSort('name')"><i class="fa-solid fa-arrow-down-a-z text-[11px] mr-1"></i>이름순 A–Z</button>
+                            <button class="filter-chip" data-s="kname" onclick="setUgSort('kname')"><i class="fa-solid fa-font text-[11px] mr-1"></i>가나다순</button>
                         </div>
                         <p class="text-center text-[13px] text-mute mb-10"><span id="ug-count"></span> · 과정 개설 전공과 요건은 학기마다 변동될 수 있습니다</p>
                         <div id="ug-cards" class="space-y-3"></div>
@@ -1738,8 +1868,25 @@ const majorCategories = {
             resultSection.innerHTML = html;
             // 진단 추천 경로를 기본 필터로 — 표시 대학 수를 줄여 심플하게
             renderUgCards(rec === 'iyo' ? 'iyo' : rec === 'fnd' ? 'fnd' : 'all');
+            history.replaceState(null, '', '#p=' + encodeURIComponent(JSON.stringify({ t: track, s: currentState })));
             window.scrollTo({ top: 0 });
         }
+
+        // ── 공유 링크(#p=)로 접속 시 결과 자동 복원 ──────────────────
+        (function restoreFromLink() {
+            const m = location.hash.match(/^#p=(.+)/);
+            if (!m) return;
+            try {
+                const d = JSON.parse(decodeURIComponent(m[1]));
+                if (!d || !d.s || !d.t) return;
+                if (d.t === 'pg' && !majorData[d.s.major]) return;
+                track = d.t === 'pg' ? 'pg' : 'ug';
+                currentState = d.s;
+                document.getElementById('hero-section').style.display = 'none';
+                document.getElementById('home-extra').style.display = 'none';
+                showResult();
+            } catch (e) { /* 손상된 링크는 무시하고 홈을 그대로 표시 */ }
+        })();
 
     </script>
 </body>

@@ -54,7 +54,13 @@
     </script>
     <style>
         body { background-color: #000000; color: #f5f5f7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        #hero-section { background: linear-gradient(180deg, rgba(0,0,0,.60) 0%, rgba(0,0,0,.48) 50%, rgba(0,0,0,.92) 100%), url('assets/img/hero-oxford.jpg') center/cover no-repeat; }
+        #hero-section {
+            background:
+                radial-gradient(ellipse 85% 60% at 50% 52%, rgba(0,0,0,.62) 0%, rgba(0,0,0,.30) 55%, rgba(0,0,0,0) 78%),
+                linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.45) 40%, rgba(0,0,0,.90) 100%),
+                url('assets/img/hero-oxford.jpg') center/cover no-repeat;
+        }
+        .hero-shadow { text-shadow: 0 2px 20px rgba(0,0,0,.65), 0 1px 4px rgba(0,0,0,.55); }
         .photo-header { background-size: cover; background-position: center; color:#f5f5f7; }
         .glass-nav { background: rgba(0,0,0,.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(255,255,255,.1); }
         .pill-btn { border-radius: 980px; transition: all .3s ease; }
@@ -103,22 +109,22 @@
         <!-- Hero Section -->
         <section id="hero-section" class="section-dark flex-grow flex flex-col items-center justify-center text-center px-4 relative overflow-hidden min-h-[90vh] py-16">
             <div class="z-10 fade-in-up" style="animation-delay:.1s;">
-                <h2 class="text-gold font-semibold tracking-wide text-sm md:text-base mb-4 uppercase">Study in the UK · QS 2027 Data</h2>
-                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter2 leading-tight mb-6">
+                <h2 class="text-gold font-bold tracking-[.12em] text-sm md:text-base mb-4 uppercase hero-shadow">Study in the UK · QS 2027 Data</h2>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tighter2 leading-tight mb-6 text-white hero-shadow">
                     영국 대학 진학,<br>AI로 설계하다.
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-400 font-light tracking-tight2 mb-10 max-w-2xl mx-auto">
+                <p class="text-xl md:text-2xl text-gray-100 font-normal tracking-tight2 mb-10 max-w-2xl mx-auto hero-shadow">
                     QS 세계대학랭킹 2027 · 2026-27 입시 데이터 기반.<br class="hidden md:block">학부부터 석사까지, 내 상황에 맞는 진학 루트를 3분 만에 확인하세요.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <button onclick="startConsulting('ug')" class="pill-btn bg-gold hover:bg-gold-deep text-black px-8 py-4 text-lg font-semibold inline-flex items-center justify-center gap-2 shadow-lg shadow-yellow-900/40 w-full sm:w-auto">
+                    <button onclick="startConsulting('ug')" class="pill-btn bg-gold hover:bg-gold-deep text-black px-8 py-4 text-lg font-semibold inline-flex items-center justify-center gap-2 shadow-lg shadow-black/40 w-full sm:w-auto">
                         학부 진학 진단 <span class="text-sm font-medium opacity-70">파운데이션 · IYO</span>
                     </button>
-                    <button onclick="startConsulting('pg')" class="pill-btn bg-transparent border border-gray-600 text-white hover:border-gold hover:text-gold px-8 py-4 text-lg font-medium inline-flex items-center justify-center gap-2 w-full sm:w-auto">
-                        석사 진학 진단 <span class="text-sm font-normal opacity-60">Direct · 프리마스터</span>
+                    <button onclick="startConsulting('pg')" class="pill-btn bg-white/15 border border-white/60 text-white hover:bg-white/25 hover:border-gold hover:text-gold px-8 py-4 text-lg font-semibold inline-flex items-center justify-center gap-2 w-full sm:w-auto backdrop-blur-md shadow-lg shadow-black/30">
+                        석사 진학 진단 <span class="text-sm font-normal opacity-80">Direct · 프리마스터</span>
                     </button>
                 </div>
-                <p class="text-[13px] text-gray-500 mt-8">영국 대학 22개교 학부 경로 데이터 · 전공별 석사 추천 대학 수록</p>
+                <p class="text-[13px] text-gray-100 mt-8 inline-block bg-black/35 backdrop-blur-sm rounded-full px-4 py-1.5 hero-shadow">영국 대학 22개교 학부 경로 데이터 · 전공별 석사 추천 대학 수록</p>
             </div>
         </section>
 

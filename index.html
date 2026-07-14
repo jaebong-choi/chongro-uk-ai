@@ -54,6 +54,8 @@
     </script>
     <style>
         body { background-color: #000000; color: #f5f5f7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        #hero-section { background: linear-gradient(180deg, rgba(0,0,0,.60) 0%, rgba(0,0,0,.48) 50%, rgba(0,0,0,.92) 100%), url('assets/img/hero-oxford.jpg') center/cover no-repeat; }
+        .photo-header { background-size: cover; background-position: center; color:#f5f5f7; }
         .glass-nav { background: rgba(0,0,0,.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(255,255,255,.1); }
         .pill-btn { border-radius: 980px; transition: all .3s ease; }
         .section-dark { background-color:#000; color:#f5f5f7; }
@@ -118,6 +120,71 @@
                 </div>
                 <p class="text-[13px] text-gray-500 mt-8">영국 대학 22개교 학부 경로 데이터 · 전공별 석사 추천 대학 수록</p>
             </div>
+        </section>
+
+        <!-- Home: 왜 종로유학원 · 런던지사 · SNS -->
+        <section id="home-extra" class="bg-white text-ink2">
+            <div class="py-24 px-4">
+                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+                    <div class="relative">
+                        <img src="assets/img/students-walking.jpg" alt="영국 대학 캠퍼스를 걷는 학생들" class="rounded-3xl shadow-xl w-full object-cover aspect-[4/5]" loading="lazy">
+                        <a href="https://www.coei.com/info/customer-reviews/thanks.php" target="_blank" rel="noopener" class="absolute -bottom-6 right-4 md:-right-6 bg-white rounded-2xl shadow-lg px-6 py-4 border border-gray-100 hover:shadow-xl transition block">
+                            <p class="text-3xl font-bold text-black leading-none">1,600<span class="text-royal">+</span></p>
+                            <p class="text-[12px] text-mute mt-1.5">학생들이 직접 남긴 감사 후기 <i class="fa-solid fa-arrow-up-right-from-square text-[9px] ml-0.5"></i></p>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="text-royal font-semibold tracking-widest text-[13px] uppercase mb-4">Since 1982 · 종로유학원</p>
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tighter2 leading-tight mb-6 text-black">유학은 결국,<br>사람이 함께하는 일입니다.</h2>
+                        <p class="text-[16px] text-gray-600 leading-relaxed mb-8">AI 진단은 시작일 뿐입니다. 지원 전략과 서류, 비자, 그리고 도착 후 첫 달의 막막함까지 — 40년 넘게 유학생을 보내온 종로유학원의 카운슬러와 현지 지사가 이어서 챙깁니다.</p>
+                        <ul class="space-y-4 mb-9">
+                            <li class="flex items-start gap-3.5"><span class="w-9 h-9 rounded-xl bg-blue-50 text-royal flex items-center justify-center shrink-0"><i class="fa-solid fa-earth-europe"></i></span><span class="text-[15px] text-gray-700 leading-snug pt-1.5">서울 본점부터 뉴욕 · 시드니 · <strong>런던</strong>까지, 전 세계 11개 지사 네트워크</span></li>
+                            <li class="flex items-start gap-3.5"><span class="w-9 h-9 rounded-xl bg-blue-50 text-royal flex items-center justify-center shrink-0"><i class="fa-solid fa-location-dot"></i></span><span class="text-[15px] text-gray-700 leading-snug pt-1.5">영국 유학생은 <strong>런던 현지 지사</strong>가 도착 이후의 생활까지 직접 지원</span></li>
+                            <li class="flex items-start gap-3.5"><span class="w-9 h-9 rounded-xl bg-blue-50 text-royal flex items-center justify-center shrink-0"><i class="fa-solid fa-comments"></i></span><span class="text-[15px] text-gray-700 leading-snug pt-1.5">상담부터 출국까지 담당 카운슬러 1:1 전담제</span></li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <a href="https://www.coei.com/info/customer-reviews/thanks.php" target="_blank" rel="noopener" class="pill-btn bg-ink2 hover:bg-black text-white px-7 py-3.5 font-semibold text-center">실제 후기 읽어보기</a>
+                            <a href="https://www.coei.com/info/consult/reserve.php" target="_blank" rel="noopener" class="pill-btn bg-white border border-gray-300 text-ink2 hover:bg-gray-50 px-7 py-3.5 font-medium text-center">무료 상담 예약</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-20 px-4 bg-paper">
+                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+                    <div class="order-2 md:order-1">
+                        <p class="text-royal font-semibold tracking-widest text-[13px] uppercase mb-4">London Office</p>
+                        <h3 class="text-2xl md:text-3xl font-bold tracking-tighter2 leading-tight mb-5 text-black">런던 블룸스버리,<br>대영박물관 옆에 종로유학원이 있습니다.</h3>
+                        <p class="text-[15px] text-gray-600 leading-relaxed mb-7">입학 수속은 서울에서 끝나지만 유학 생활은 도착부터 시작이죠. 숙소와 은행 계좌, 휴대폰 개통, 병원과 보험 — 낯선 첫 달에 필요한 일들을 런던지사가 한국어로 도와드립니다.</p>
+                        <ul class="space-y-2.5 text-[14px] text-gray-700 mb-7">
+                            <li class="flex gap-3"><i class="fa-solid fa-location-dot text-royal mt-1 shrink-0"></i>4/4a Bloomsbury Square, London WC1A 2RP</li>
+                            <li class="flex gap-3"><i class="fa-solid fa-comment text-royal mt-1 shrink-0"></i>카카오톡 <strong>coeilondon</strong></li>
+                            <li class="flex gap-3"><i class="fa-solid fa-envelope text-royal mt-1 shrink-0"></i>ld@coei.com</li>
+                        </ul>
+                        <a href="https://www.coei.com/info/branches/international.php?BranchNo=116" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-royal font-semibold text-[15px] hover:underline">런던지사 자세히 보기 <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                    </div>
+                    <img src="assets/img/oxford-view.jpg" alt="영국 대학 건물" class="rounded-3xl shadow-xl w-full object-cover aspect-[4/3] order-1 md:order-2" loading="lazy">
+                </div>
+            </div>
+
+            <div class="py-16 px-4 bg-white border-t border-gray-100">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h3 class="text-xl md:text-2xl font-bold tracking-tight mb-2 text-black">종로유학원 소식을 SNS에서 만나보세요</h3>
+                    <p class="text-mute text-[14px] mb-8">합격 소식, 현지 브이로그, 최신 입시 정보를 매주 업데이트합니다.</p>
+                    <div class="flex flex-wrap items-center justify-center gap-3">
+                        <a href="https://www.youtube.com/@COEI1982" target="_blank" rel="noopener" class="pill-btn bg-white border border-gray-200 hover:border-red-400 text-ink2 px-6 py-3 font-medium inline-flex items-center gap-2.5 text-[14px]"><i class="fa-brands fa-youtube text-red-500 text-lg"></i> 유튜브</a>
+                        <a href="https://blog.naver.com/chongroblog" target="_blank" rel="noopener" class="pill-btn bg-white border border-gray-200 hover:border-green-500 text-ink2 px-6 py-3 font-medium inline-flex items-center gap-2.5 text-[14px]"><span class="text-[#03C75A] font-black text-[15px]">N</span> 네이버 블로그</a>
+                        <a href="https://www.instagram.com/chongro_official" target="_blank" rel="noopener" class="pill-btn bg-white border border-gray-200 hover:border-pink-400 text-ink2 px-6 py-3 font-medium inline-flex items-center gap-2.5 text-[14px]"><i class="fa-brands fa-instagram text-pink-500 text-lg"></i> 인스타그램</a>
+                        <a href="https://tv.naver.com/chongro" target="_blank" rel="noopener" class="pill-btn bg-white border border-gray-200 hover:border-green-500 text-ink2 px-6 py-3 font-medium inline-flex items-center gap-2.5 text-[14px]"><span class="text-[#03C75A] font-black text-[15px]">TV</span> 네이버TV</a>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="bg-[#0b0b0c] py-12 text-center">
+                <img src="assets/logo.png" alt="종로유학원" class="h-6 mx-auto mb-5 opacity-90">
+                <p class="text-xs text-gray-500 font-medium mb-2">ⓒ 종로유학원. All rights reserved.</p>
+                <p class="text-[11px] text-gray-600 leading-relaxed max-w-xl mx-auto px-4">본 페이지의 대학 순위는 QS World University Rankings 2027(2026년 6월 발표), 과정·요건 정보는 각 대학 및 운영 기관 공시 기준이며 학기마다 변동될 수 있습니다. 최종 지원 전 반드시 상담을 통해 최신 요강을 확인하세요.</p>
+            </footer>
         </section>
 
         <!-- Interactive Chat Section -->
@@ -827,6 +894,7 @@ const majorCategories = {
             track = t || 'pg';
             currentState = {}; step = 0;
             document.getElementById('hero-section').style.display = 'none';
+            document.getElementById('home-extra').style.display = 'none';
             document.getElementById('result-section').style.display = 'none';
             document.getElementById('chat-history').innerHTML = '';
             const chatSection = document.getElementById('chat-section');
@@ -1008,14 +1076,15 @@ const majorCategories = {
         // ── 공통 결과 파츠 ───────────────────────────────────────────
         function ctaHTML(title, sub) {
             return `
-                <div class="section-light py-24 px-4 text-center border-t border-gray-200">
+                <div class="photo-header py-28 px-4 text-center" style="background-image:linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.78)),url('assets/img/family-consult.jpg')">
                     <div class="max-w-3xl mx-auto">
-                        <h2 class="text-4xl font-bold tracking-tighter2 mb-6 text-black">${title}</h2>
-                        <p class="text-lg text-gray-600 mb-10 leading-relaxed">${sub}</p>
+                        <h2 class="text-4xl font-bold tracking-tighter2 mb-6 text-white">${title}</h2>
+                        <p class="text-lg text-gray-200 mb-10 leading-relaxed">${sub}</p>
                         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <a href="${CONSULT_URL}" target="_blank" rel="noopener" class="pill-btn bg-gold hover:bg-gold-deep text-black px-8 py-4 text-lg font-semibold w-full sm:w-auto shadow-lg shadow-yellow-500/30 transition-all transform hover:-translate-y-1">종로유학원 무료 상담 예약</a>
-                            <button onclick="goHome()" class="pill-btn bg-white border border-gray-300 text-ink2 hover:bg-gray-50 px-8 py-4 text-lg font-medium w-full sm:w-auto">다시 진단하기</button>
+                            <button onclick="goHome()" class="pill-btn bg-white/10 border border-white/40 text-white hover:bg-white/20 px-8 py-4 text-lg font-medium w-full sm:w-auto backdrop-blur-sm">다시 진단하기</button>
                         </div>
+                        <p class="text-[13px] text-gray-300 mt-10">Since 1982 · 전 세계 11개 지사 · <a href="https://www.coei.com/info/branches/international.php?BranchNo=116" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-white">런던 현지 지사 운영</a> · <a href="https://www.coei.com/info/customer-reviews/thanks.php" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-white">감사 후기 1,600건+</a></p>
                     </div>
                 </div>`;
         }
@@ -1030,6 +1099,11 @@ const majorCategories = {
                         <a href="${YT_URL}" target="_blank" rel="noopener" class="pill-btn bg-[#1d1d1f] border border-[#3d3d40] hover:border-gold hover:text-gold text-white px-8 py-4 text-lg font-medium inline-flex items-center gap-3">
                             <i class="fa-brands fa-youtube text-red-500 text-xl"></i> 종로유학원 유학정보 영상 보러가기
                         </a>
+                        <div class="flex flex-wrap items-center justify-center gap-2.5 mt-8">
+                            <a href="https://blog.naver.com/chongroblog" target="_blank" rel="noopener" class="pill-btn bg-transparent border border-[#3d3d40] hover:border-[#03C75A] text-gray-300 hover:text-white px-5 py-2.5 text-[13px] font-medium inline-flex items-center gap-2"><span class="text-[#03C75A] font-black">N</span> 네이버 블로그</a>
+                            <a href="https://www.instagram.com/chongro_official" target="_blank" rel="noopener" class="pill-btn bg-transparent border border-[#3d3d40] hover:border-pink-400 text-gray-300 hover:text-white px-5 py-2.5 text-[13px] font-medium inline-flex items-center gap-2"><i class="fa-brands fa-instagram text-pink-400"></i> 인스타그램</a>
+                            <a href="https://tv.naver.com/chongro" target="_blank" rel="noopener" class="pill-btn bg-transparent border border-[#3d3d40] hover:border-[#03C75A] text-gray-300 hover:text-white px-5 py-2.5 text-[13px] font-medium inline-flex items-center gap-2"><span class="text-[#03C75A] font-black text-[12px]">TV</span> 네이버TV</a>
+                        </div>
                     </div>
                 </div>`;
         }
@@ -1071,6 +1145,12 @@ const majorCategories = {
             return `
                 <footer class="bg-[#0b0b0c] py-12 text-center border-t border-gray-900">
                     <img src="assets/logo.png" alt="종로유학원" class="h-6 mx-auto mb-5 opacity-90">
+                    <div class="flex items-center justify-center gap-4 mb-6 text-gray-500">
+                        <a href="${YT_URL}" target="_blank" rel="noopener" class="hover:text-red-500 transition" aria-label="유튜브"><i class="fa-brands fa-youtube text-lg"></i></a>
+                        <a href="https://blog.naver.com/chongroblog" target="_blank" rel="noopener" class="hover:text-[#03C75A] transition font-black text-[15px]" aria-label="네이버 블로그">N</a>
+                        <a href="https://www.instagram.com/chongro_official" target="_blank" rel="noopener" class="hover:text-pink-400 transition" aria-label="인스타그램"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="https://tv.naver.com/chongro" target="_blank" rel="noopener" class="hover:text-[#03C75A] transition font-black text-[13px]" aria-label="네이버TV">TV</a>
+                    </div>
                     <p class="text-xs text-gray-500 font-medium mb-2">ⓒ 종로유학원. All rights reserved.</p>
                     <p class="text-[11px] text-gray-600 leading-relaxed max-w-xl mx-auto px-4">본 페이지의 대학 순위는 QS World University Rankings 2027(2026년 6월 발표), 과정·요건 정보는 각 대학 및 운영 기관 공시 기준이며 학기마다 변동될 수 있습니다. 최종 지원 전 반드시 상담을 통해 최신 요강을 확인하세요.</p>
                 </footer>`;
@@ -1119,9 +1199,9 @@ const majorCategories = {
             if (extraDocs.length === 0) extraDocs.push('전공별 세부 요구 서류는 학교 · 과정마다 다르므로, 무료 상담 시 정확히 안내해 드립니다.');
 
             let html = `
-                <div class="section-dark pt-24 pb-16 px-4">
+                <div class="photo-header pt-24 pb-16 px-4" style="background-image:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),url('assets/img/students-study.jpg')">
                     <div class="max-w-4xl mx-auto text-center">
-                        <span class="inline-block py-1 px-3 border border-gray-600 rounded-full text-xs font-semibold tracking-widest text-gray-300 mb-6 uppercase">AI Analysis Complete</span>
+                        <span class="inline-block py-1 px-3 border border-gray-500 rounded-full text-xs font-semibold tracking-widest text-gray-200 mb-6 uppercase">AI Analysis Complete</span>
                         <h2 class="text-4xl md:text-5xl font-bold tracking-tighter2 mb-6 leading-tight">
                             당신을 위한 최적의 진학 경로는<br><span class="text-gold">"${pathwayTitle}"</span> 입니다.
                         </h2>
@@ -1403,9 +1483,9 @@ const majorCategories = {
             const recChip = k => (rec === k || rec === 'both' && (k === 'fnd' || k === 'iyo')) ? '<span class="route-badge bg-gold text-black mb-4">추천 경로</span>' : '<span class="route-badge bg-gray-100 text-gray-500 mb-4">경로 안내</span>';
 
             let html = `
-                <div class="section-dark pt-24 pb-16 px-4">
+                <div class="photo-header pt-24 pb-16 px-4" style="background-image:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.88)),url('assets/img/quad-sunset.jpg')">
                     <div class="max-w-4xl mx-auto text-center">
-                        <span class="inline-block py-1 px-3 border border-gray-600 rounded-full text-xs font-semibold tracking-widest text-gray-300 mb-6 uppercase">AI Analysis Complete · Undergraduate</span>
+                        <span class="inline-block py-1 px-3 border border-gray-500 rounded-full text-xs font-semibold tracking-widest text-gray-200 mb-6 uppercase">AI Analysis Complete · Undergraduate</span>
                         <h2 class="text-4xl md:text-5xl font-bold tracking-tighter2 mb-6 leading-tight">
                             당신을 위한 학부 진학 경로는<br><span class="text-gold">"${d.title}"</span> 입니다.
                         </h2>

@@ -260,6 +260,7 @@
         let currentState = {};
         let step = 0;
         let track = 'pg'; // 'pg' 석사 | 'ug' 학부
+        let flowStack = []; // 질문별 스냅샷 — 뒤로가기용
 
         const OPT_BTN_CLASS = 'pill-btn bg-[#2d2d2f] text-[#f5f5f7] border border-[#3d3d40] hover:bg-gold hover:border-gold hover:text-black py-3.5 px-4 font-medium shadow-sm text-[14px] md:text-[15px] text-center w-full';
 
@@ -959,7 +960,7 @@ const majorCategories = {
 
         function startConsulting(t) {
             track = t || 'pg';
-            currentState = {}; step = 0;
+            currentState = {}; step = 0; flowStack = [];
             document.getElementById('hero-section').style.display = 'none';
             document.getElementById('home-extra').style.display = 'none';
             document.getElementById('result-section').style.display = 'none';
@@ -1000,6 +1001,8 @@ const majorCategories = {
             const qs = activeQuestions();
             if (step < qs.length) {
                 const q = qs[step];
+                // 뒤로가기용 스냅샷 — 이 질문을 답하기 직전 상태 저장
+                flowStack.push({ step, state: { ...currentState }, childCount: document.getElementById('chat-history').children.length });
                 addChatBubble('ai', q.q);
                 if (q.key === 'major' && track === 'pg') { renderMajorCategories(); return; }
                 const c = document.getElementById('options-container');
@@ -1017,11 +1020,34 @@ const majorCategories = {
                     note.innerText = q.note;
                     c.appendChild(note);
                 }
+                appendBackButton(c);
             } else {
                 document.getElementById('options-container').innerHTML = '';
                 addChatBubble('ai', '정보 입력이 완료되었습니다. 최신 26/27 영국 입시 데이터를 바탕으로 결과를 분석 중입니다...');
                 setTimeout(showResult, 1800);
             }
+        }
+
+        // 옵션 하단에 눈에 띄지 않게 '이전 질문' 버튼을 붙인다 (첫 질문에는 없음)
+        function appendBackButton(c) {
+            if (flowStack.length < 2) return;
+            const back = document.createElement('button');
+            back.className = 'pill-btn bg-transparent text-gray-500 hover:text-gold border border-transparent hover:border-[#3d3d40] py-2.5 px-4 font-medium text-[13px] w-full sm:col-span-2 mt-1 inline-flex items-center justify-center gap-2';
+            back.innerHTML = '<i class="fa-solid fa-arrow-left text-[11px]"></i> 이전 질문으로';
+            back.onclick = goBackQuestion;
+            c.appendChild(back);
+        }
+
+        function goBackQuestion() {
+            if (flowStack.length < 2) return;
+            flowStack.pop();                       // 현재 질문 스냅샷 제거
+            const prev = flowStack.pop();          // 이전 질문 스냅샷 (askQuestion이 다시 push)
+            const history = document.getElementById('chat-history');
+            while (history.children.length > prev.childCount) history.lastElementChild.remove();
+            currentState = { ...prev.state };
+            step = prev.step;
+            document.getElementById('options-container').innerHTML = '';
+            askQuestion();
         }
 
         function handleAnswer(value, label) {
@@ -1099,6 +1125,7 @@ const majorCategories = {
                     btn.onclick = () => handleAnswer(opt.value, opt.label);
                     c.appendChild(btn);
                 });
+                appendBackButton(c);
             };
         }
 
@@ -1117,6 +1144,7 @@ const majorCategories = {
                 };
                 c.appendChild(b);
             });
+            appendBackButton(c);
         }
         function renderMajorList(cat) {
             const c = document.getElementById('options-container');
@@ -1158,6 +1186,7 @@ const majorCategories = {
                     btn.onclick = () => handleAnswer(opt.value, opt.label);
                     c.appendChild(btn);
                 });
+                appendBackButton(c);
             };
             c.appendChild(back);
         }
